@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>请输入qq号码：<input type="" name="" id="" value="" /><button type="button">判断</button></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.getElementsByTagName("button")[0]
+	var inp = document.getElementsByTagName("input")[0]
+	btn.onclick = function(){
+		var w = inp.value
+		// console.log(w.length)
+		if(w == ""){
+			alert("不能为空")
+		}
+		for(var a =0;a<w.length;a++){
+			var n = w.substring(a,a+1)
+			// console.log(a)
+			// console.log(n)
+			if(w.indexOf(" ") != -1){
+				alert("请不要以0开头，请不要留空格")
+				break
+			}
+			if(n==1||n==2||n==3||n==4||n==5||n==6||n==7||n==8||n==9||n==0){
+				if(w.length < 5 || w.length >10){
+					alert("请正确输入5-10位QQ号码")
+					break
+				}
+			}
+			else{
+				alert("请输入数字")
+				break
+			}
+		}
+	}
+</script>

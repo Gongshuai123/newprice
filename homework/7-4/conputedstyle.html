@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/* input {width: 300px;} */
+	</style>
+	<body><!-- 这里是没有灵魂的注释 -->
+		<input type="text" name="test" id="inp" value="123"/>
+		<div id="box" >hello world</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oInp = document.getElementsByTagName("input")[0]
+	console.log(oInp.name)
+	console.log(oInp.width)
+	console.log(inp['name'])
+	function f1 (ele,arrt,sty){
+		if(sty){
+			ele.style[arrt] = sty
+		}else if(window.getComputedStyle){
+			return getComputedStyle((ele),[arrt])
+		}else{
+			return ele.currentStyle[arrt]
+		}
+	}
+	f1(oInp,"width","200px")
+	console.log(getComputedStyle(oInp)['width'])
+	var oBox = document.getElementById("box")
+	console.log("----------------------")
+	console.log(oBox.nodeName)
+	console.log(oBox.nodeValue)
+	console.log(oBox.nodeType)
+	console.log("----------------------")
+	console.log(document.nodeName)
+	console.log(document.nodeValue)
+	console.log(document.nodeType)
+	console.log("----------------------")
+	console.log(document.body.firstChild.nodeName)
+	console.log(document.body.firstChild.nodeValue)
+	console.log(document.body.firstChild.nodeType)
+	console.log("----------------------")
+	console.log(oBox.firstChild.nodeName)
+	console.log(oBox.firstChild.nodeValue)
+	console.log(oBox.firstChild.nodeType)
+	
+</script>

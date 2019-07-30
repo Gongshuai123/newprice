@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<input type="checkbox" name="hobby" id="" value="" />上单
+			<input type="checkbox" name="hobby" id="" value="" />中单
+			<input type="checkbox" name="hobby" id="" value="" />打野
+			<input type="checkbox" name="hobby" id="" value="" />ADC
+			<input type="checkbox" name="hobby" id="" value="" />辅助
+			<input type="checkbox" name="hobby" id="" value="" />补位
+			<input type="checkbox" name="hobby" id="" value="" />对不起我是演员
+			<button type="button"onclick="fAll()">全选</button>
+			<button type="button"onclick="fNone()">全不选</button>
+			<button type="button"onclick="fBack()">反选</button>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var hobby = document.getElementsByTagName("input")
+	function fAll (){
+		for(var a = 0; a < hobby.length;a++){
+				hobby[a].checked = true;		}
+	}
+	function fNone (){
+		for(var a = 0; a < hobby.length;a++){
+			hobby[a].checked = 0;
+		}
+	}
+	function fBack (){
+		for(var a = 0 ; a < hobby.length;a++){
+			hobby[a].checked = !hobby[a].checked
+		}
+	}
+</script>

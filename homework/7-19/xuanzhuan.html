@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<canvas id="cv" width="500px" height="500px"></canvas>
+	</body>
+</html>
+<script type="text/javascript">
+	var cv = $('canvas')[0].getContext('2d')
+	var n = 1
+	var b = 50
+	var on = 1
+	setInterval(function(){
+		if(b > 300){
+			on = 0
+		}else if(b<50){
+			on=1
+		}
+		if(on){
+			$('canvas').attr('width','500px')
+			cv.translate(150,150)
+			cv.rotate(n+=15*Math.PI/180)
+			cv.fillRect(-(b+=2)/2,-(b+=2)/2,b+=2,b+=2)
+		}else{
+			$('canvas').attr('width','500px')
+			cv.translate(150,150)
+			cv.rotate(n+=10*Math.PI/180)
+			cv.fillRect(-(b-=2)/2,-(b-=2)/2,b-=2,b-=2)
+		}
+	},100)
+</script>

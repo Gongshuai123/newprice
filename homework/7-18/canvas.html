@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			background: lightgoldenrodyellow;
+		}
+
+		canvas {
+			background: white;
+			margin-top: 7%;
+			margin-left: 3%;
+		}
+
+		.box {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			right: 8%;
+			top: 10%;
+		}
+		input{width: 100%;margin: 15% 0;}
+		i {
+			margin: 15% 0;
+			color: #333;
+		}
+		p{border: 1px solid #000000;margin: 15% 0;background: #000000;}
+		p:first-child{margin-top: 30%;height: 3px;}
+		p:nth-child(2){height: 6px;}
+		p:nth-child(3){height: 10px;}
+	</style>
+	<body>
+		<canvas id="DW">
+		</canvas>
+		<div class="box">
+			<i class="iconfont icon-xiazai"></i>
+			<i class="iconfont icon-bi"></i>
+			<i class="iconfont icon-xiangpi"></i>
+			<i class="iconfont icon-qingchu"></i>
+			<input type="color"/>
+			<div class="wi">
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function() {
+		var wi = 3
+		var col = 'black'
+		var bi = 0
+		var xp = 0
+		var move = 1
+		var movex = 0
+		var ctx = $('canvas')[0].getContext("2d")
+		sets()
+		ctx.beginPath()
+		ctx.lineWidth = "5";
+		ctx.strokeStyle = "red";
+		ctx.moveTo(80, 80);
+		ctx.lineTo(260, 80);
+		ctx.lineTo(110, 200);
+		ctx.lineTo(180, 10);
+		ctx.lineTo(230, 200);
+		ctx.closePath()
+		ctx.stroke();
+		window.onresize = function() {
+			console.log($(window).height())
+			sets()
+		}
+		$('.icon-bi').click(function() {
+			$('i').css({
+				'color': '#333'
+			})
+			$('.icon-bi').css({
+				'color': 'lightblue'
+			})
+			// $('.icon-bi').attr('name','1')
+			bi = 1
+		})
+		$('.icon-xiangpi').click(function() {
+			$('i').css({
+				'color': '#333'
+			})
+			$('.icon-xiangpi').css({
+				'color': 'lightblue'
+			})
+			bi = 0
+			xp = 1
+			move = 0
+		})
+		$('canvas').mousedown(function(e) {
+			if (bi) {
+				var col = $('input').val()
+				movex = 0
+				move = 1
+				var x = e.offsetX
+				var y = e.offsetY
+				ctx.beginPath()
+				ctx.moveTo(x, y);
+				$('canvas').mousemove(function(e) {
+					if (move) {
+						var x = e.offsetX
+						var y = e.offsetY
+						ctx.lineCap="round"
+						ctx.lineWidth = wi;
+						ctx.strokeStyle = col;
+						ctx.lineTo(x, y);
+						ctx.stroke();
+					}
+				})
+			} else if (xp) {
+				movex = 1
+				var x = e.offsetX
+				var y = e.offsetY
+				ctx.moveTo(x, y);
+				$('canvas').mousemove(function(e) {
+					if (movex) {
+						var x = e.offsetX
+						var y = e.offsetY
+						ctx.clearRect(x - 5, y - 5, 10, 10)
+					}
+				})
+			}
+		})
+		$(window).mouseup(function() {
+			ctx.closePath()
+			move = 0
+			movex = 0
+		})
+		$('.icon-qingchu').click(function() {
+			sets()
+		})
+		$('p').click(function(){
+			$('p').css('border','1px solid black')
+			$(this).css('border','1px solid lightblue')
+			wi = $(this).height()
+			// console.log($(this).height())
+		})
+		$('.icon-xiazai').click(function() {
+				var oA = document.createElement("a");
+				oA.download = '我的图片'; // 设置下载的文件名，默认是'下载'
+				oA.href = DW.toDataURL("image/jpeg");
+				document.body.appendChild(oA);
+				oA.click();
+				oA.remove(); // 下载之后把创建的元素删除
+		})
+	})
+
+	function sets() {
+		$('canvas').attr('height', $(window).height() * 0.8)
+		$('canvas').attr('width', $(window).width() * 0.8)
+		$('.iconfont').css('font-size', $(window).height() * 0.08 + 'px')
+	}
+</script>

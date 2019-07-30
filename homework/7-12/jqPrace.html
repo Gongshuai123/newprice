@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		li{list-style: none;width: 50px;height: 50px;margin: 3px;}
+		ul{display: flex;}
+		li:first-child{background: red;}
+		li:nth-child(2){background: blue;}
+		li:nth-child(3){background: yellow;}
+		li:nth-child(4){background: #00CCFF;}
+		li:last-child{background:#DD4A68;}
+		div{width: 150px;height: 150px;background: #EFEFEF;margin: 5px;}
+	</style>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("li").click(function(){
+			var a = $(this).css('backgroundColor')
+			$('div').click(function(){
+				$(this).css('backgroundColor',a)
+			})
+		})
+	})
+</script>

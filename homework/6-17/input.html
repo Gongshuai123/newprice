@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单练习</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		span {color:red}
+		.fgr {font: 12px/20px 微软雅黑;color: #8A8A8A; text-indent: 7em;}
+		.tab {margin: 0 auto;width: 600px;}
+		a:visited {color: blue;}
+		div {margin: 10px;}
+		*{font: 14px/20px 微软雅黑;}
+		input {width: 260px;height: 30px;box-sizing: border-box;}
+		select {width: 260px;height: 30px;color: #8A8A8A;}
+		.tab div:first-child {text-indent: -2em;}
+		.tab div:nth-child(8) {text-indent: -2em;}
+		.tab div:nth-child(12) {text-indent: 1em;position: relative;}
+		.tab div:nth-child(3) {text-indent: 6em;}
+		.tab div:nth-child(14) input {width: 15px;height: 15px;}
+		.tab div:nth-child(12) input {width: 120px;}
+		.foot {text-indent: 6em;line-height: 30px;height: 30px;position: relative;}
+		.foot input {position: relative;top: 3px;}
+		img {position: absolute;top: 0px;left: 210px;}
+		button {
+			color: white;
+			font: bold 16px 微软雅黑;
+			position: relative;
+			left: 80px;
+			width: 115px;
+			height: 40px;
+			background: linear-gradient(#3A9BD7, #2F75B8);
+			border: none;
+			border-radius: 5px 3px 3px 5px;
+			}
+		.tans {
+			position: absolute;
+			top: -10px;left: 104px;
+			border: 20px solid #368DCC;
+			border-color: transparent transparent transparent #368DCC;
+			/* border-image: linear-gradient(#3A9BD7, #2F75B8) 20 20; */
+			}
+	</style>
+	<body>
+		<div class="tab">
+			<div ><span>*</span>常用邮件地址：
+				<input type="text" name="mail" id="" value="" /></div>
+			<div class="fgr">支持你的常用邮箱，如name@example.com</div>
+			<div><a href="">还没有邮箱？立即注册网易邮箱>></a></div>
+			<div><span>*</span>设置密码：
+				<input type="password" name="" id="" value="" /></div>
+			<div class="fgr">6到16个字符，区分大小写。</div>
+			<div><span>*</span>确认密码：
+				<input type="password" name="" id="" value="" /></div>
+			<div class="fgr">再次输入你设置的密码</div>
+			<div><span>*</span>密码保护问题：	
+				<select>
+				<option value ="0" >请选择..</option>
+				<option value ="1" >毕业的学校</option>
+				<option value ="2" >父母的名字</option>
+				<option value ="3" >最喜欢的明星</option>
+				<option value ="4" >最爱吃的菜</option>
+				</select>
+			</div>
+			<div class="fgr">密码保护问题用于帮助你找回登录密码。</div>
+			<div><span>*</span>你的答案：
+				<input name=""/></div>
+			<div class="fgr">4到30个字符，区分大小写，一个汉字占两个字符。</div>
+			<div><span>*</span>验证码：
+				<input type="" name="" id="" value="" /><div><img src="img/无标题.png" ></div></div>
+			<div class="fgr">不区分大小写。看不清楚可以<a href="">换一个</a></div>
+			<div class="foot"><input type="checkbox" name="" id="" value="" />
+			我同意<a href="">“服务条款”</a>和<a href="">“隐私权保护和个人信息利用政策”</a>
+			</div>
+			<div><button type="button">立即注册<div class="tans"></div></button></div>
+		</div>
+	</body>
+</html>

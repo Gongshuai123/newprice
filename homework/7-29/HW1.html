@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var arr= '-wib-body-kidd-dif'
+	function ff(str){
+		var arr = str.split('-')
+		var arr1 = []
+		for(var a=0;a<arr.length;a++){
+			if(arr[a]!=""){
+				arr1.push(arr[a])
+			}
+		}
+		str1 = arr1[0]
+		for(var b in arr1){
+			if(b!=0){
+				var n = arr1[b][0].toString().toUpperCase()+arr1[b].substring(1)
+				str1 += n
+			}
+		}
+		console.log(str1)
+	}
+	ff(arr)
+</script>

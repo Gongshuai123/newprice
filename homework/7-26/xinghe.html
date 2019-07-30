@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.out{height: 500px;width: 500px;background: radial-gradient(#336496,#0F1C2A);
+		position: relative;display: flex; justify-content: center;align-items: center;}
+		.huan{border: 1px solid white;width: 300px;height: 300px;border-radius: 50%;
+		animation: sc 2s linear infinite;position: relative;
+		transform: rotateY(10deg);
+		transform-style: preserve-3d;
+		}
+		.huan::after{content: "";display: block;  width: 8px;
+		height: 8px;background: white;border-radius: 50%;
+		position: absolute;
+		left: 95px;
+		/* transform: rotateX(0deg) rotateY(90deg); */
+		animation: scc 1s linear infinite;
+		}
+		.box{position: absolute;}
+		.box:nth-child(1){transform: rotate(30deg);}
+		.box:nth-child(2){transform: rotate(60deg);}
+		.box:nth-child(3){transform: rotate(90deg);}
+		.box:nth-child(4){transform: rotate(120deg);}
+		.box:nth-child(5){transform: rotate(150deg);}
+		.box:nth-child(1) .huan::after,.box:nth-child(1) .huan{animation-delay: -1s;}
+		.box:nth-child(2) .huan::after,.box:nth-child(2) .huan{animation-delay: -1.5s;}
+		.box:nth-child(3) .huan::after,.box:nth-child(3) .huan{animation-delay: -2s;}
+		.box:nth-child(4) .huan::after,.box:nth-child(4) .huan{animation-delay: -2.5s;}
+		.box:nth-child(5) .huan::after,.box:nth-child(5) .huan{animation-delay: -3s;}
+		.box:nth-child(6) .huan::after,.box:nth-child(6) .huan{animation-delay: -3.5s;}
+		@keyframes sc{
+			0%{transform:rotateX(100deg) rotateZ(0deg)}
+			100%{transform:rotateX(100deg) rotateZ(360deg);}
+		} 
+		@keyframes scc{
+			0%{transform: rotateZ(0deg) rotateX(90deg);}
+			100%{transform: rotateZ(-180deg) rotateX(90deg);}
+		}
+		.cen{position: absolute;height: 50px;width: 50px;border-radius: 50%;
+		background: white;animation: cen 3s infinite linear;}
+		@keyframes cen{
+			from{box-shadow: white 0 0 25px;}
+			50%{box-shadow: white 0 0 0px;}
+			100%{box-shadow: white 0 0 25px;}
+		}
+	</style>
+	<body>
+		<div class="out">
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="box">
+				<div class="huan">
+				</div>
+			</div>
+			<div class="cen"></div>
+		</div>
+	</body>
+</html>

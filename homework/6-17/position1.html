@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>box position practice</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.box {
+			position: position;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #000000;
+		}
+		.boxs {
+			width: 150px;
+			height: 150px;
+			background: #07A1F1;
+		}
+		.boxs:nth-child(3) {
+			background: orange;
+			position: absolute;
+			left: 150px;
+		}
+		.boxs:nth-child(2) {
+			position: absolute;
+			left: 300px;
+			top: 1px;
+		}
+		.boxs:nth-child(4) {
+			position: absolute;
+			left: 300px;
+			top: 300px;
+		}
+		.boxs:nth-child(5) {
+			position: absolute;
+			top: 300px;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="boxs"></div>
+			<div class="boxs"></div>
+			<div class="boxs"></div>
+			<div class="boxs"></div>
+			<div class="boxs"></div>
+		</div>
+	</body>
+</html>

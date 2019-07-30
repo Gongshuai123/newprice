@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 1-100的和
+	var result = 0;
+	for (var a = 1;a <= 100;a++){
+		result += a
+	}
+	console.log(result)
+	// 1-100偶数和
+	var result = 0;
+	for (var a = 1; a <= 100; a++){
+		if (a%2 == 0){
+			result += a
+		}
+	}
+	//1-100奇数和
+	console.log(result)
+	var result = 0;
+	for (var a = 1; a <= 100;a++){
+		if(a&2 != 0){
+			result += a
+		}
+	}
+	console.log(result)
+</script>

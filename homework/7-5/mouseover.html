@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {width: 100px;height: 100px;background: #00CCFF;position: absolute;}
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName('div')[0]
+	var on = 1
+	window.onmousemove = function(ev){
+		if(on){
+			// console.log(div.offsetHeight)
+			var bh = div.offsetHeight
+			var bw = div.offsetWidth
+			// console.log(ev.clientX)
+			var x = ev.clientX
+			var y = ev.clientY
+			div.style.cssText = 'top: '+(y-bh/2)+'px;left: '+(x-bw/2)+'px;'
+		}
+		if(on){
+			document.onclick = function(){
+				on = 0
+			}
+		}
+		if(!on){
+			document.onclick = function(){
+				on = 1
+			}
+		}
+	}
+	
+	
+</script>

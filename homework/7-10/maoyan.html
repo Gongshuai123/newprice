@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="font/iconfont.css">
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.top{height: 44px;background: #E54847;text-align: center;color: white;line-height: 44px;font-weight: 600;
+		position: fixed;top: 0px;width: 100%;}
+		.top1{display: flex;justify-content: space-between;height: 40px;
+		border: 1px solid lightgoldenrodyellow;align-items: center;
+		position: fixed;top: 44px;width: 100%;background: white;}
+		.top1 div{margin: 10px;font-family: '微软雅黑';font-size: 15px;}
+		.top1 div:nth-child(2){border-bottom: 2px solid red;padding: 11px
+		;width: 20%;}
+		.top1 div:first-child{color: #999;}
+		.top1 div:nth-child(2){padding: 11px;width: 20%;}
+		.top1 div:last-child i {color: red;font-size: 22px;margin-right: 10px;}
+		ul,li {padding: 0;margin: 0;list-style: none;}
+		img{width: 65px;margin: 5px;}
+		.box {height: 100px;display: flex;justify-content: space-between;
+		align-items: center;}
+		.boxl {display: flex;height: 100px;border-bottom: 2px solid #F9F9F9;}
+		.boxl div p:nth-child(n+2) {font-size: 12px;margin: 4px 6px ;color: #999999;
+		width: 18em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+		.boxl div p:first-child{font-size: 16px;font-weight: bold;font-family: 黑体;
+		width: 10em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+		margin: 7px 5px;}
+		.body {padding: 0 5px;margin-top: 94px;margin-bottom: 45px;}
+		.point {font-size: 16px;margin: 5px;color: orange;font-weight: bold;}
+		.bot {height: 40px;border: 1px solid #F9F9F9;position: fixed;bottom: 0px;
+		width: 100%;background: white;display: flex;
+		justify-content: space-between;}
+		.bot1{width: 30%;padding: 0 50px;}
+		.bot1 i {font-size: 25px;}
+		.bot1:first-child{color: red;}
+		.bot1 p {line-height: 0px;font-size: 11px;margin-top: 6px;}
+		.boxr{height: 25px;width: 45px;border: 1px transparent solid;border-radius: 5px;
+		text-align: center;line-height: 25px;color: white;font-size: 12px;
+		background: red;font-weight: bold;}
+		.chr{position: absolute;border: #000000 5px solid;
+		border-color: #999 transparent transparent transparent;left: 45px;top: 18px;}
+	</style>
+	<body>
+		<div class="top">猫眼电影</div>
+		<div class="top1">
+			<div>深圳<span class="chr"></span></div>
+			<div>正在热映</div>
+			<div>即将上映</div>
+			<div><i class="iconfont icon-fangdajing"></i></div>
+		</div>
+		<div class="body">
+			<ul>
+				<li>
+					<!-- <div class="box">
+						<div class="boxl">
+							<img src="../7-3/img/0.png" >
+							<div>
+								<p>名字</p>
+								<p>观众评</p>
+								<p>主演</p>
+								<p>场次按排</p>
+							</div>
+						</div>
+						<div class="boxr">
+							购买
+						</div>
+					</div> -->
+				</li>
+			</ul>
+			<div class="bot">
+				<div class="bot1">
+					<i class="iconfont icon-dianying"></i>
+					<p>电影</p>
+				</div>
+				<div class="bot1">
+					<i class="iconfont icon-yingyuana"></i>
+					<p>影院</p>
+				</div>
+				<div class="bot1">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var ul = document.getElementsByTagName('ul')[0]
+	ajax('get','https://www.easy-mock.com/mock/5ba06ec82ee5a7654dc13dd7/example/movieInfo','',function(a){
+		var res = JSON.parse(a)
+		console.log(res.movieList)
+		res.movieList[1].img.substring(0,22)
+		for(var a =0;a<res.movieList.length;a++){
+			var n = res.movieList[a]
+			if (n.sc) {
+				var p1 =`观众评<span class="point">`+n.sc.toFixed(1)+`</span>`
+			}else{
+				var p1 =`<span class="point">`+n.wish+`</span>人想看`
+			}
+			<!-- console.log(p1) -->
+			if(n.globalReleased){
+				var p2 = `<div class="boxr">购买</div>`
+			}else{
+				var p2 = `<div class="boxr" style="background:blue">预售</div>`
+			}
+			ul.innerHTML += `
+			<li>
+				<div class="box">
+					<div class="boxl">
+						<img src= `+res.movieList[a].img.substring(0,22)+`128.180`+res.movieList[a].img.substring(25)+`>
+						<div>
+							<p>`+res.movieList[a].nm+`</p>
+							<p>${p1}</p>
+							<p>主演：`+res.movieList[a].star+`</p>
+							<p>`+res.movieList[a].showInfo+`</p>
+						</div>
+					</div>
+					${p2}
+				</div>
+			</li>
+			`
+		}
+	})
+	
+</script>

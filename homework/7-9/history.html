@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../7-3/img/0.png" >
+		<button type="button">进</button>
+		<button type="button">退</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var img = document.getElementsByTagName('img')[0]
+	var go = document.getElementsByTagName('button')[0]
+	var back = document.getElementsByTagName('button')[1]
+	location.hash = 0
+	img.onclick = function(){
+		location.hash+1
+		img.src = "../7-3/img/"+(location.hash.substring(1))+".png"
+		if(location.hash.substring(1) == 9){
+			location.hash.substring(1) = 0
+		}
+	}
+	go.onclick = function(){
+		img.src = "../7-3/img/"+location.hash.substring(1)+".png"
+		console.log(location.hash.substring(1))
+		window.history.forward()
+	}
+	back.onclick = function(){
+		img.src = "../7-3/img/"+location.hash.substring(1)+".png"
+		window.history.back()
+		
+	}
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动作业3顺时针浮动（虾米也，不就是向右浮动么</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.clf:after {content: "";display: block;clear: both;}
+		.box {width: 400px;border: 2px #000 solid;}
+		.a0 {
+			width: 297px;
+			height: 297px;
+			border: #fff 1.5px solid;
+			background: #ff00ff;
+			float: left;
+		}
+		.a1 {
+			width: 100px;
+			height: 100px;
+			border: none;
+			background: #FFFF00;
+			float: right;
+		}
+		.a1:nth-child(even) {background-color: #77CB13;}
+	</style>
+	<body>
+		<div class="box clf">
+			<div class="a0">第一块</div>
+			<div class="a1">第二块</div>
+			<div class="a1">第三块</div>
+			<div class="a1">第四块</div>
+			<div class="a1">第五块</div>
+			<div class="a1">第六块</div>
+			<div class="a1">第七块</div>
+			<div class="a1">第八块</div>
+		</div>
+	</body>
+</html>

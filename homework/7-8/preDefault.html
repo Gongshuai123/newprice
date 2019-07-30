@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		ul{display: none;position: absolute;}
+		li{border: 1px solid #00CCFF;margin: 5px;width: 85px;text-align: center;}
+		li:hover{background: skyblue;color: #fff;cursor: pointer;}
+	</style>
+	<body>
+		<ul>
+			<li>小鸡炖蘑菇</li>
+			<li>小鸡炖土豆</li>
+			<li>小鸡炖南瓜</li>
+			<li>小鸡炖黄瓜</li>
+			<li>小鸡炖苦瓜</li>
+			<li>小鸡炖小鸡</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl = document.getElementsByTagName('ul')[0]
+	var lis = document.getElementsByTagName('li')
+	document.oncontextmenu = function(e){
+		e.preventDefault()
+		var x = e.pageX
+		var y = e.pageY
+		oUl.style.cssText = 'top : '+y+'px;left : '+x+'px;display : block'
+	}
+	document.onclick = function(){
+		oUl.style.display = 'none'
+	}
+	
+</script>

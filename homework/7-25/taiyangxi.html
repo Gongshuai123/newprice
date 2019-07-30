@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box{width: 600px;height: 600px;background: radial-gradient(#999, #666, #333);}
+		div {display: flex;justify-content: center;align-items: center;}
+		.box div:not(.sun){border: white 1px solid;border-radius: 50%;}
+		.star1 {width: 500px;height: 500px;}
+		.star2 {width: 370px;height: 370px;}
+		.star3 {width: 270px;height: 270px;}
+		.sun {width: 50px;height: 50px;background:orangered;border-radius: 50%;
+		box-shadow: 0 0 30px red;
+		animation: sun1 5s linear infinite;}
+		p{width: 30px;height: 30px;border-radius: 50%;
+		position: absolute;}
+		.star11{background: #0064B4;top: 280px;left: 42px;
+		transform: rotate(60deg);transform-origin: 265px 10px;
+		animation: scl1 5s linear infinite;}
+		.star22{background: #9A6E3A;top: 280px;left: 107px;
+		transform: rotate(180deg);transform-origin: 200px 10px;
+		animation: scl2 7s linear infinite;}
+		.star33{background: gold;top: 280px;left: 160px;
+		transform: rotate(270deg);transform-origin: 150px 10px;
+		animation: scl3 4s linear infinite;}
+		@keyframes scl1{
+			form{
+				transform: rotate(60deg);
+				}
+			to{
+				transform: rotate(420deg);
+				}
+		}
+		@keyframes scl2{
+			form{
+				transform: rotate(180deg);
+				}
+			to{
+				transform: rotate(540deg);
+				}
+		}
+		@keyframes scl3{
+			form{
+				transform: rotate(270deg);
+				}
+			to{
+				transform: rotate(630deg);
+				}
+		}
+		@keyframes sun1{
+			form{
+				box-shadow: 5 5 20px red;
+			}
+			to{
+				box-shadow: -5 -5 40px red;
+			}
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="star1">
+				<div class="star2">
+					<div class="star3">
+						<div class="sun">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="star11"></p>
+		<p class="star22"></p>
+		<p class="star33"></p>
+	</body>
+</html>

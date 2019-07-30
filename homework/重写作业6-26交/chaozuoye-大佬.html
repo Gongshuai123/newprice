@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0px;padding: 0px;}
+			.btnBox button {
+				width: 50px;
+				height: 30px;
+				border: none;
+				cursor: pointer;
+			}
+			.activeBtn {
+				background-color: orange;
+			}
+			div {
+				width: 250px;
+				height: 150px;
+				border: 1px solid black;
+				display: none;
+			}
+			.activeDiv {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p class="btnBox">
+			<button class="activeBtn">111</button>
+			<button>222</button>
+			<button>333</button>
+		</p>
+		<div class="activeDiv">111</div>
+		<div></div>
+		<div></div>
+		<script type="text/javascript">
+			window.onload = function(){
+				//获取元素
+				var btns = document.getElementsByTagName("button");
+				var divs = document.getElementsByTagName("div");
+				
+				for (var i = 0; i < btns.length; i++) {
+					btns[i].index = i;//下标另存
+					btns[i].onclick = function(){//循环绑定点击事件
+						
+						for (var j = 0; j < btns.length; j++) {//清空样式
+							btns[j].className = "";
+							divs[j].className = "";
+						}
+						
+						btns[this.index].className = "activeBtn";//设置当前按钮的样式
+						divs[this.index].innerHTML = btns[this.index].innerHTML;//将当前按钮的内容赋值给对应Div
+						divs[this.index].className = "activeDiv";//设置对应Div可见
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

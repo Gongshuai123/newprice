@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+			}
+			.container{
+				height: 350px;
+				border: 1px solid #ccc;
+				overflow-y: auto;
+			}
+			.container .tips{
+				text-align: center;
+				justify-content: center;
+				font-size: 12px;
+				color: #ccc;
+			}
+			.container p:nth-child(1){
+				display: flex;
+				justify-content: space-between;
+			}
+			p span:nth-child(1){
+				display: inline-block;
+				width: 60px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			p span:nth-child(2){
+				max-width: 240px;
+				background: limegreen;
+				color: #fff;
+				padding: 5px;
+				border-radius: 5px;
+				word-break: break-all;
+				margin-left: 10px;
+			}
+			.container div{
+				display: flex;
+				justify-content: space-between;
+			}
+			.send{
+				display: flex;
+				justify-content: space-between;
+			}
+			.send input{
+				flex: 1;
+				height: 50px;
+			}
+			::-webkit-scrollbar{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="container">
+				
+			</div>
+			<div class="send">
+				<input type="text" name="" id="" value="" />
+				<button type="button">发送消息</button>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			var oBox = document.querySelector(".container");
+			var oVal = document.querySelector("input");
+			var oSend = document.querySelector("button");
+			
+			// 1.创建连接()
+			var ws = new WebSocket("ws://192.168.2.66:3001");
+			
+			// 2.连接已建立
+			ws.onopen = function(){
+				console.log("连接已建立");
+			}
+			
+			// 4.接收消息
+			ws.onmessage = function(ev){
+				var newDiv = document.createElement("div");
+				if(ev.data.search("tips")!= -1){
+					newDiv.innerHTML = ev.data;
+					newDiv.className = "tips";
+				}else{
+					var data = JSON.parse(ev.data);
+					var time = new Date().toLocaleTimeString() ;
+					newDiv.innerHTML = `
+						<p>
+							<span>${data.nickname}</span>
+							<span>${data.msg}</span>
+						</p>
+						<p>${time}</p>
+					`
+				}
+				oBox.appendChild(newDiv);
+				oBox.scrollTop = oBox.scrollHeight;
+			}
+			
+			// 5.关闭连接
+			ws.onclose = function(){
+				console.log("连接已关闭");
+			}
+			
+			oSend.onclick = function(){
+				var val = oVal.value;
+				if(val){
+					// 3.发送消息
+					ws.send(val);
+					oVal.value = "";
+				}
+			}
+			
+		</script>
+	</body>
+</html>

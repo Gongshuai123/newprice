@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var obj1 = {};
+	var name1 = "pit"
+	obj1.name1 = "binge"
+	console.log(obj1.name1)
+	obj1.setName =function(){
+		console.log(this.name1)
+		this.name1 = name1
+		console.log(name1)
+		return name1
+	}
+	obj1.setName()
+	console.log(obj1.setName())
+	var a = new String("abc")
+	
+	// var a = "abc"
+	var b = "abc"
+	console.log(a === b)
+</script>

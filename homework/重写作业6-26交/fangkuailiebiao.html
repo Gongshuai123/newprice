@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box {width: 303px;height: 303px;}
+		.box div {height: 100px;width: 100px;border: 1px solid white;
+		border-bottom: none;border-right: none;background: lightblue;float: left;}
+	</style>
+	<body>
+		<div class="box">
+
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementsByClassName("box")[0]
+	for(var a =0 ; a < 9;a++){
+		box.innerHTML += '<div></div>'
+	}
+</script>

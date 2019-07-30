@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>cainiao2</title>
+	</head>
+	<style type="text/css">
+/* 		@import url("css/c980new.css") screen and (min-width:980px);
+		@import url("css/c768new.css") screen and (min-width:768px) and (max-width:980px); */
+		@media screen and (min-width:980px) {
+			.content{width: 31%;}
+			.bRight {width: 75%;}
+			input {width: 30%;}
+			.bRightB {display: flex;flex-flow: wrap;}
+			.hid {display: none;}
+		}
+		@media screen and (min-width:768px) and (max-width:980px) {
+			.content{width: 46%;}
+			.bRight {width: 75%;}
+			input {width: 30%;}
+			.bRightB {display: flex;flex-flow: wrap;}
+			.hid {display: none;}
+		}
+		@media screen and (min-width:600px) and (max-width:767px) {
+			.content{width: 46%;}
+			.bLeft{display: none;}
+			.bRight {width: 85%;}
+			input {width: 30%;}
+			.bRightB {display: flex;flex-flow: wrap;}
+			.hid {display: none;}
+		}
+		@media screen and (min-width:480px) and (max-width:599px) {
+			.content{width: 46%;}
+			.bLeft{display: none;}
+			.bRight {width: 85%;}
+			.top2 div:nth-child(n+4){display: none;}
+			input {width: 25%;}
+			.bRightB {display: flex;flex-flow: wrap;}
+			.hid {display: none;}
+		}
+		@media screen and (max-width:480px) {
+			.content{width: 46%;}
+			.bLeft{display: none;}
+			.bRight {width: 85%;}
+			.top2 div:nth-child(n+4){display: none;}
+			input {display: none;}
+			.bRightB {display: none;flex-flow: wrap;}
+		}
+		*{margin: 0;padding: 0;}
+		input {
+			height: 35px;
+			border: 1px lightgray solid;
+			margin: 0 30px;
+			border-radius: 3px;
+			}
+		.top {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			height: 90px;
+			background: #F6F6F6 url(img/runoob-logo.png) no-repeat 60px 25px;
+			}
+		.top2 {
+			background: #96B97D;
+			height: 30px;
+			display: flex;
+			min-width: 240px;
+			}
+		.top2 div {
+			height: 30px;
+			font: 12px/30px 微软雅黑;
+			color: white;
+			margin: 0 0px;
+			text-indent: 2em;background: #96B97D;
+			}
+		.top2 div:first-child{
+			position: relative;
+			text-indent: 4em;
+			}
+		.tra {
+			border: 5px white solid;
+			border-color: transparent transparent white transparent ;
+			position: absolute;top: 20px;left: 54px;background: #96B97D;
+			}
+		.bLeft .bLeftT {
+			position: relative;
+			height: 22px;
+			background: linear-gradient(#efefef,#e1e1e1);
+			border: 1px lightgrey solid;
+			border-radius: 3px 3px 0 0;
+			line-height: 22px;
+		}
+		.bLeft .bLeftT img {
+			position: absolute;
+			top: 4px;
+			left: 5px;
+		}
+		.bLeft div div {
+			border: lightgray 1px solid;
+			border-top: none;
+			padding: 10px 0;
+			}
+		.body {
+			display: flex;
+			background: #F6F6F6;
+			}
+		.bLeft {
+			width: 13%;
+			margin: 20px 0 0 3%;
+			font: 14px 微软雅黑;
+			text-indent: 1.5em;
+			}
+		.bLeft div div:nth-child(odd){
+			background: white url(img/white.png) 3px 12px no-repeat;
+			}
+		.bLeft div div:nth-child(even){
+			background: #FBFBFB url(img/gray.png) 3px 12px no-repeat;
+			}
+		.bRight {
+			/* width: 75%; */border: lightgoldenrodyellow 1px solid;
+			border-radius: 4px;padding: 20px;background: white;
+			margin: 20px 0 0 20px;}
+		.bRightT {
+			height: 24px;
+			font: 16px/24px 微软雅黑;
+			border-bottom: 1px lightgray solid;
+			text-indent: 2em;
+			background: url(img/hengtiao2.png) 4px 3px no-repeat;
+			margin: 10px 0 10px 0;
+			}
+		.content{
+			height: 90px;
+			/* width: 31%; */border: #FBFBFB 1px solid;
+			border-radius: 4px;
+			position: relative;
+			background: #FBFBFB;margin: 5px;
+			}
+		.content div:first-child {
+			font: 16px/40px 微软雅黑;
+			height: 40px;
+			color: #96B97D;
+			}
+		.content div:last-child {
+			font: 12px 微软雅黑;
+			height: 50px;position: absolute;
+			left: 50px;
+			font-weight: 600;
+			color: #666;
+			}
+		.img1 {
+			width: 35px;
+			position: absolute;
+			left: 10px;
+			}
+		.h1 div {
+			padding: 10px 5px;
+			width: 28%;
+			background: #F6F6F6;
+			border: 1px solid #F6F6F6;
+			border-radius: 4px;
+			margin: 10px 5px 5px 0px;border-bottom: none;
+			text-align: center;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+		.h1 {
+			display: flex;
+			flex-flow: wrap;
+			color: #64854C;
+			font-weight: 550;
+			font-size: 15px;
+			}
+	</style>
+	<body>
+		<div class="top">
+			<input name="" id="" value="" placeholder="搜索....."/>
+		</div>
+		<div class="top2">
+			<div>首页<span class="tra"></span></div>
+			<div>菜鸟笔记</div>
+			<div>菜鸟工具</div>
+			<div>参考手册</div>
+			<div>用户笔记</div>
+			<div>测验/考试</div>
+			<div>本地书签</div>
+			<div>登录</div>
+		</div>
+		<div class="body">
+			<div class="bLeft">
+				<div class="bLeftT"><img src="img/hengtiao.png" >全部教程</div>
+				<div>
+					<div>HTML / CSS</div>
+					<div>JavaScript</div>
+					<div>服务端</div>
+					<div>数据库</div>
+					<div>移动端</div>
+					<div>XML 教程</div>
+					<div>ASP.NET</div>
+					<div>Web Service</div>
+					<div>开发工具</div>
+					<div>网站建设</div>
+				</div>
+			</div>
+			<div class="bRight">
+				<div class="bRightT">HTML/CSS</div>
+				<div class="bRightB">
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+					<div class="content">
+						<div>【学习HTML】<br><img class="img1" src="img/html.png" ></div>
+						<div>HTML,即超文本标记语言（Hyper Text Markup Language）</div>
+					</div>
+				</div>
+				<div class="hid">
+					<div class="h1">
+						<div>HTML</div>
+						<div>HTML5</div>
+						<div>CSS</div>
+						<div>CSS3</div>
+						<div>Bootstrap3</div>
+						<div>Bootstrap4</div>
+						<div>Font Awesome</div>
+						<div>Foundetion</div>
+					</div>
+					<div class="bRightT">HTML/CSS</div>
+					<div class="h1">
+						<div>HTML</div>
+						<div>HTML5</div>
+						<div>CSS</div>
+						<div>CSS3</div>
+						<div>Bootstrap3</div>
+						<div>Bootstrap4</div>
+						<div>Font Awesome</div>
+						<div>Foundetion</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

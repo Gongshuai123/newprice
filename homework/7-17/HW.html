@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		progress {
+		  width: 600px;
+		  height: 10px;
+		  border: 1px solid #0064B4;  
+		  background-color:#e6e6e6;
+		  color: #0064B4; /*IE10*/;
+		  margin: 0;
+		  position: absolute;
+		  top: 25px;
+		  left: 0px;
+		  display: none;
+		}
+		input[type="range"]{
+			width: 100px;
+			height: 5px;
+			border: 0;
+			background-color: #efefef;
+			border-radius: 5px;
+			/* position: relative; */
+			-webkit-appearance: none !important; 
+			outline: none;
+		}
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: white;
+		}
+		span{position: absolute;top: 4px;color: white;left: 300px;font-size: 13px;}
+		span:hover{cursor: pointer;}
+		progress::-moz-progress-bar { background: #0064B4; }
+		progress::-webkit-progress-bar { background: white; }
+		progress::-webkit-progress-value  { background: lightblue; }
+		.box{width: 600px;position: absolute;top: 310px;display: none;}
+		.iconfont{font-size: 20px;color: lightgrey;margin: 0 10px;}
+		i:hover{cursor: pointer;color: white;}
+		input{position: absolute;left: 180px;top: 10px;z-index: 999;}
+		.icon-quanping{float: right;}
+		.tim{color: white;float: right;}
+	</style>
+	<body>
+		<video width="600" height="">
+			<source src="video/yushi.mp4" type="video/mp4">
+			当前浏览器不支持 video直接播放
+		</video>
+		<!-- <button type="button">开始/暂停</button>
+		<button type="button">前进</button>
+		<button type="button">后退</button>
+		<button type="button">静音</button>
+		<button type="button">全屏</button> -->
+		<div class="box">
+			<i class="iconfont icon-kaishi"></i>
+			<i class="iconfont icon-ai19-copy-copy"></i>
+			<i class="iconfont icon-kuaijin-copy"></i>
+			<i class="iconfont icon-shengyinyinliangxianxing"></i>
+			<i class="iconfont icon-quanping"></i>
+			<div class="tim"></div>
+			<input type="range" name="" id="" value="100" />
+			<progress value="0" max="600"> </progress>
+			<span>倍速</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var cont = 1
+		var setT=null
+		var video = $('video')[0]
+		$('.iconfont').eq(0).click(function(){
+			if(video.paused){
+				video.play()
+				$('.iconfont').eq(0).attr('class',"iconfont icon-zantingtingzhi")
+			}else{
+				video.pause()
+				$('.iconfont').eq(0).attr('class',"iconfont icon-kaishi")
+			}
+		})
+		$('.iconfont').eq(2).click(function(){
+			video.currentTime +=10
+		})
+		$('.iconfont').eq(1).click(function(){
+			video.currentTime -=10
+		})
+		$('.iconfont').eq(3).click(function(){
+			if(video.volume !=0){
+				video.volume = 0
+				$('.iconfont').eq(3).attr('class','iconfont icon-shengyinjingyinxianxing')
+				$('input').val(0)
+			}else{
+				video.volume = 1
+				$('input').val(100)
+				$('.iconfont').eq(3).attr('class','iconfont icon-shengyinyinliangxianxing')
+			}
+		})
+		$('.iconfont').eq(4).click(function(){
+			video.requestFullscreen()
+		})
+		$('input')[0].oninput = function(){
+			video.volume =($('input')[0].value)/100
+			if(video.volume ==0){
+				$('.iconfont').eq(3).attr('class','iconfont icon-shengyinjingyinxianxing')
+			}else{
+				$('.iconfont').eq(3).attr('class','iconfont icon-shengyinyinliangxianxing')
+			}
+		}
+		$('progress').click(function(e){
+			var x = e.offsetX 
+			video.currentTime = video.duration*(x/600)
+			$('progress').val(x)
+		})
+		video.ontimeupdate = function(){
+			var t = video.duration
+			var b = video.currentTime/t
+			$('progress').val(b*600)
+			tim(t)
+			var t1 = video.currentTime
+			tim(t1)
+			console.log(tim(t1))
+			$('.tim').html(`
+			${tim(t1)}/${tim(t)}
+			`)
+		}
+		function tim (t){
+			var h = t/3600
+			var m = Math.floor(t%3600/60)
+			var s = t%60
+			if(s.toFixed(0)<10){
+				return m.toFixed(0)+':0'+s.toFixed(0)
+			}else if(s.toFixed(0)==60){
+				return m.toFixed(0)*1+1+':00'
+			}else{
+				return m.toFixed(0)+':'+s.toFixed(0)
+			}
+		}
+		$('span').click(function(){
+			video.playbackRate=cont++
+			$('span').text(cont+'倍')
+			if(cont > 4){
+				cont =1 
+				video.playbackRate=1
+				$('span').text('正常')
+			}
+		})
+		$('video').mousemove(ff)
+		$('.box').mousemove(ff)
+		function ff(){
+			clearTimeout(setT)
+			$('.box').fadeIn("slow")
+			$('progress').fadeIn("slow")
+			setT= setTimeout(function() {
+				$('.box').fadeOut("slow")
+				$('progress').fadeOut("slow")
+			}, 1500);
+		}
+	})
+</script>

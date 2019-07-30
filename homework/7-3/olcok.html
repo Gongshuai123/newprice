@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: auto;padding: auto;}
+		div {height: 60px;border: 1px solid #00CCFF;overflow: hidden;}
+		img:nth-child(4){margin-right: 30px;}
+		img:nth-child(6){margin-right: 30px;}
+		img:nth-child(8){margin-right: 30px;}
+		.sun,.moon {width: 60px;}
+	</style>
+	<body>
+		<div id="olc">
+		</div>
+		<div>
+			<img src="img/1.jpg" class="moon">
+			<img src="img/sun.jpg"class="sun" >
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var olc = document.getElementById("olc")
+	setInterval(function(){
+		var tim = new Date
+		var yA = tim.getFullYear().toString().slice(0,1)
+		var yB = tim.getFullYear().toString().slice(1,2)
+		var yC = tim.getFullYear().toString().slice(2,3)
+		var yD = tim.getFullYear().toString().slice(3,)
+		var mA = (tim.getMonth()+1).toString().slice(0,1)
+		var mB = (tim.getMonth()+1).toString().slice(1,)
+		if(mB == ""){
+			mB = mA
+			mA = 0
+		}
+		var dA = tim.getDate().toString().slice(0,1)
+		var dB = tim.getDate().toString().slice(1,)
+		if(dB == ""){
+			dB = dA
+			dA = 0
+		}
+		var hA = tim.getHours().toString().slice(0,1)
+		var hB = tim.getHours().toString().slice(1,)
+		if(hB == ""){
+			hB = hA
+			hA = 0
+		}
+		var minA = tim.getMinutes().toString().slice(0,1)
+		var minB = tim.getMinutes().toString().slice(1,)
+		if(minB == ""){
+			minB = minA
+			minA = 0
+		}
+		var secA = tim.getSeconds().toString().slice(0,1)
+		var secB = tim.getSeconds().toString().slice(1,)
+		if(secB == ""){
+			secB = secA
+			secA = 0
+		}
+		var sun = document.getElementsByClassName("sun")[0]
+		var moon = document.getElementsByClassName("moon")[0]
+		if(tim.getHours()>=5 && tim.getHours()<=17){
+			moon.style.display="none"
+		}else{
+			sun.style.display="none"
+		}
+		olc.innerHTML = (
+			'<img src="img/'+yA+'.png">'+
+			'<img src="img/'+yB+'.png">'+
+			'<img src="img/'+yC+'.png">'+
+			'<img src="img/'+yD+'.png">'+
+			'<img src="img/'+mA+'.png">'+
+			'<img src="img/'+mB+'.png">'+
+			'<img src="img/'+dA+'.png">'+
+			'<img src="img/'+dB+'.png">'+
+			'<img src="img/'+hA+'.png">'+
+			'<img src="img/'+hB+'.png">'+
+			'<img src="img/second1.png" >'+
+			'<img src="img/'+minA+'.png">'+
+			'<img src="img/'+minB+'.png">'+
+			'<img src="img/second1.png" >'+
+			'<img src="img/'+secA+'.png">'+
+			'<img src="img/'+secB+'.png">'
+		)
+	},1000)
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="cv" width="500px" height="500px"></canvas>
+	</body>
+</html>
+<script type="text/javascript">
+	var c = cv.getContext('2d')
+	c.beginPath()
+	// c.fillRect(100,100,100,100)
+	c.rect(100,100,100,100)
+	cv.onclick = function(e){
+		// console.log(e.pageY)
+		console.log(c.isPointInPath(e.pageX,e.pageY))
+	}
+	c.closePath()
+	console.log((0.2*100+0.1*100)==0.3*100)
+	
+	</script>

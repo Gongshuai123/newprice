@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		a:visited {color: #000000;}
+		.top1 {
+			width: 500px;
+			height: 50px;
+			border-bottom: 1px lightgrey solid;
+			font:bold 14px/50px 宋体;
+			text-indent: 1em;
+		}
+		.top2 {
+			width: 500px;
+			height: 50px;
+			font: 12px/18px 宋体;
+			margin: 10px 0;
+			padding: 0 0 0 1em;
+		}
+		.topZ,.topN,.topY {
+			position: relative;
+			width: 400px;
+			height: 150px;
+			margin: 20px 60px;
+			font-size: 12px;
+		}
+		.topY {height: 100px;}
+		input {width: 210px;height: 23px;}
+		.topZ div {margin: 15px 0;}
+		.topZ div:first-child {text-indent: 1em;}
+		.topZ div:nth-child(2) {margin: -20px 0 0 100px;}
+		.topZ div img {position: relative;top: 7px;}
+		.topZ div:last-child {
+			padding-bottom: 40px;
+			border-bottom: 1px lightgrey solid;
+		}
+		.topN {margin: 60px 0 20px 60px;}
+		.topN div {margin: 15px 0;}
+		.topN div:first-child {text-indent: 3em;}
+		.topN div:nth-child(2) {text-indent: 5em;}
+		.topN div:nth-child(2) input {width: 14px;position: relative;top:6px;left: 3px;margin: -10px 0;}
+		.topN div:nth-child(2) input:last-child {margin-left: 30px;}
+		.topN div:nth-child(3) {text-indent: 3em;}
+		.topN div:last-child {
+			text-indent: 1em;
+			border-bottom: 1px lightgrey solid;
+			padding-bottom: 30px;
+		}
+		.topY div:first-child {text-indent: 4em;margin-top:35px;}
+		.topY div:last-child {margin: 50px 0 0 100px;}
+		.topY div:first-child input {width: 75px;}
+		.topY div:nth-child(2) {width: 119px;position: absolute;top: 0px;left: 190px;}
+		.btn button{
+			width: 195px;
+			height: 25px;
+			background:#D32C47;
+			color: white;
+			font-size: 14px;
+		}
+		.btn {text-indent: 9em;}
+		.star {color: red;margin: 5px 5px;}
+	</style>
+	<body>
+		<div>
+			<div class="top1">注册：开通您的开心账户</div>
+			<div class="top2">开心网是帮助你与你的朋友、同事、同学、家人保持更紧密联系的真实社交平台，通过这个平台 你可以及时了解他们的最新动态；分享你的照片、心情、快乐；结识更多的新朋友</div>
+			<div class="topZ">
+				<div>你的电子邮箱：<span class="star">*</span><input type="" name="" id="" value="" /></div>
+				<div><img src="img/叹号.png" >如果没有邮箱，你可以使用<a href="">账号注册</a></div>
+				<div>设置开心网密码：<span class="star">*</span><input type="" name="" id="" value="" /></div>
+				<div>再输入一遍密码：<span class="star">*</span><input type="" name="" id="" value="" /></div>
+			</div>
+			<div class="topN">
+				<div>你的姓名：<span class="star">*</span><input type="" name="" id="" value="" /></div>
+				<div>性别：<span class="star">*</span><input type="radio" name="sex" id="" value="" />
+					男
+					<input type="radio" name="sex" id="" value="" />
+					女
+				</div>
+				<div>出生日期：<span class="star">*</span>
+					<select>
+						<option value ="">1991</option>
+					</select>
+					年
+					<select>
+						<option value ="">1</option>
+					</select>
+					月
+					<select>
+						<option value ="">1</option>
+					</select>
+					日
+				</div>
+				<div>谁可以浏览我：<span class="star">*</span>
+					<select>
+						<option value ="">仅我的好友可以浏览我</option>
+					</select>
+				</div>
+			</div>
+			<div class="topY">
+				<div>验证码：<span class="star">*</span><input type="" name="" id="" value="" /></div>
+				<div><img src="img/validate-code.png" ><a href="">看不清 换一张</a></div>
+				<div><a href="">开心网服务条款</a></div>
+			</div>
+			<div class="btn"><button type="button">同意条款，立即注册</button></div>
+		</div>
+	</body>
+</html>

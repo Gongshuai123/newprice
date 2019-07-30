@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		li{list-style: none;width: 100px;}
+		img{width: 100px;vertical-align:top;}
+		ul{display: flex;width: 400px;border: 1px solid red;flex-wrap: wrap;height: 230px;}
+		.box{width: 400px;height: 230px;border: 1px solid black;margin: 20px 0;display: flex;flex-wrap: wrap;}
+		.pin{width: 100px;height: 115px;}
+	</style>
+	<body>
+		<ul>
+			<li><img src="cherry/ying1.jpg" draggable="true"></li>
+			<li><img src="cherry/ying2.jpg" draggable="true"></li>
+			<li><img src="cherry/ying3.jpg" draggable="true"></li>
+			<li><img src="cherry/ying4.jpg" draggable="true"></li>
+			<li><img src="cherry/ying5.jpg" draggable="true"></li>
+			<li><img src="cherry/ying6.jpg" draggable="true"></li>
+			<li><img src="cherry/ying7.jpg" draggable="true"></li>
+			<li><img src="cherry/ying8.jpg" draggable="true"></li>
+		</ul>
+		<div class="box">
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+			<div class="pin"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var img = document.getElementsByTagName('img')
+	var box = document.getElementsByClassName('box')[0]
+	var pin = document.getElementsByClassName('pin')
+	for(var i = 0;i<img.length;i++){
+		img[i].ondragstart=function(){
+			// this.style.display='none'
+			var mimg = this
+			// box.ondragover = function(e){
+			// 	e.preventDefault()
+			// }
+			for(var j in pin){
+				pin[j].ondragover=function(e){
+					for(var n=0;n<pin.length;n++){
+						pin[n].style.backgroundColor='white'
+					}
+					this.style.backgroundColor='#eee'
+					e.preventDefault()
+				}
+				pin[j].ondrop = function(){
+					// console.log(this)
+					this.appendChild(mimg)
+				}
+			}
+			
+		}
+	}
+	
+</script>

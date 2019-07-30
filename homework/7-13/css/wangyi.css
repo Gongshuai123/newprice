@@ -1,0 +1,120 @@
+		*{margin: 0;padding: 0;background: #F9F9F9;}
+		a {text-decoration: none;font: 12px 宋体;}
+		a:visited {color: #3332CC;}
+		.clf:after {content: "";display: block;clear: both;}
+		.top {width: 980px;margin: 0 auto;background: #F9F9F9;height: 70px;}
+		.top div {float: left;margin: 20px 10px;}
+		.top div:nth-child(4){
+			font: 20px 微软雅黑;
+			border-left: 1px #ccc solid;
+			padding: 0px 0 0 15px;
+			margin: 25px 0 0 0;
+		}
+		.top div a:first-child {
+			border-right: 1px solid #ccc;
+			padding: 0 10px 0 0 ;
+			margin: 0px 10px 0 0;
+		}
+		.top div:last-child {margin: 25px 20px; float: right;}
+		.top2 {
+			position: relative;
+			color: white;
+			width: 960px; 
+			height: 35px; 
+			margin: 0 auto;
+			border: 1px solid lightblue;
+			border-radius: 3px 3px 0 0;
+			background: linear-gradient(skyblue,#5584B4);
+		}
+		.helo {
+			background: transparent;
+			line-height: 35px;
+			text-indent: -5em;
+			position: absolute;
+			top: 0;left: 105px;
+		}
+		.body {width: 960px;margin: 0 auto;position: relative;}
+		.mail {
+			width: 165px;
+			float: left;
+			border: 1px #0E529A solid;
+			background: linear-gradient(#155CA5,#438CD6);
+			border-radius: 3px 0 0 3px;
+			color: white;
+		}
+		.mailM {
+			width: 165px;
+			float: left;
+			border: 1px #B5B5B5 solid;
+			background: linear-gradient(#fff,#EFEFEF);
+			border-radius: 0 3px 3px 0;
+		}
+		.left {
+			background: white;
+			position: relative;
+			float: left;
+			width: 640px;
+			height: 550px;
+			border: 1px solid #E0E0E0;
+		}
+		.mailBox {
+			position: absolute;
+			top: 50px;left: 150px;
+			width: 335px;
+			height: 35px;
+			text-align: center;
+			font:16px/35px 微软雅黑;
+		}
+		input,select{
+			background: white;
+			border: 1px #ABABAB solid;
+			border-radius: 3px;
+			box-sizing: border-box;
+		}
+		input {width: 333px;height: 27px;margin: 0 0 0 5px;}
+		.mailI {width: 220px;}
+		select {width: 91px;height: 27px;}
+		.fontL {
+			font: 12px 微软雅黑;
+			color: #999;
+			text-indent: 8.5em;
+			margin: 5px 20px 25px 20px;
+		}
+		.leftD {
+			position: absolute;
+			top: 100px;left: 28px;
+			background: white;
+		}
+		.leftD div {
+			background: white;
+		}
+		.leftD span {color: red;margin: 10px;}
+		.leftD1 {margin: 20px 20px 5px 20px;}
+		.leftD1:nth-child(3) {text-indent: 2em;}
+		.leftD1:nth-child(7) {text-indent: 1em;}
+		.leftD1:nth-child(7) input {width: 200px;}
+		.ckBox {width: 14px;height: 14px;position: absolute;left: 95px;top:2px;}
+		.leftD2 {text-indent: 10em;position: relative;}
+		.btn {
+			width: 120px;
+			height: 35px;
+			background: linear-gradient(#69B856,#42A42B);
+			border: 1px solid #4A9C32;
+			margin: 10px 0 0 120px;
+		}
+		.fontS {margin: 25px 20px 25px 20px;}
+		.keyP {position: absolute;top:230px;left: 340px;}
+		.right {
+			position: absolute;
+			top: 0;left: 639px;
+			background: url(../img/right-img.png) no-repeat 50px 100px #F5F5F5;
+			width: 319px;
+			height: 550px;
+			border: 1px #E0E0E0 solid;
+		}
+		.foot {
+			margin: 10px auto 20px;
+			width: 550px;
+			font: 12px/30px 微软雅黑;
+			color: #999;
+		}

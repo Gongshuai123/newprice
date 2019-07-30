@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var Call = function(brand,price,callPhone){
+		this.brand = brand;
+		this.price = price;
+		this.callPhone = function(){
+			console.log("用价值" + price + "的" + brand + "手机打电话")
+		};
+	}
+	var obj1 = new Call("华为","2899",)
+	obj1.callPhone()
+	var obj2 = new Call("苹果","1000",)
+	obj2.callPhone()
+	//---------------------------------------------------------
+	var phone = {}
+	setPrice = function(price){
+		this.price = price
+	}
+	setBrand = function(brand){
+		this.brand = brand
+	}
+	phone.call = function(){
+		console.log("用价值" + price + "的" + brand + "手机打电话")
+	}
+	setBrand("华为")
+	setPrice("1800")
+	phone.call()
+</script>

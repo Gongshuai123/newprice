@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#text {
+			width: 400px;
+			height: 400px;
+			border: 1px lightblue solid;
+			border-radius: 3px;
+			margin: 20px;
+			overflow: auto;
+		}
+		#in1 {
+			width: 200px;
+		}
+		button {
+			margin-left: 10px;
+		}
+		select {
+			margin-left: 20px;
+		}
+		.text {font: 14px/25px 微软雅黑;text-indent: 1em;}
+	</style>
+	<body>
+		<div id="text"></div>
+		<select id="name1">
+			<option value ="龚帅">龚帅</option>
+			<option value ="吴慧敏">吴慧敏</option>
+			<option value ="黄智彬">黄智彬</option>
+		</select>
+		<input type="text" name="" id="in1" value="" />
+		<button type="button" onclick="inn()">发表留言</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var text = document.getElementById("text")
+	var in1 = document.getElementById("in1")
+	var name1 = document.getElementById("name1")
+	console.log(name1.value)
+	function inn (){
+			text.innerHTML += "<div class='text'>" + name1.value + ":" + in1.value +"<div>"
+	}
+</script>

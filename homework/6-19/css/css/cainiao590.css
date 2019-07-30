@@ -1,0 +1,153 @@
+.top {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	height: 90px;
+	background: url(../img/runoob-logo.png) no-repeat #F6F6F6 40px 25px;
+}
+.top input {
+	height: 30px;
+	font-size: 15px;
+	margin: 0 30px 0 0 ;
+	width: 35%;
+}
+.nav {
+	display: flex;
+	align-items:center;
+	height: 30px;
+	background: #96B97D;
+	color: white;
+	font-size: 12px;
+}
+.nav div {
+	margin: 0 15px;
+}
+.nav div:first-child {
+	margin: 0 0 0 40px;
+}
+.tans {
+	position: relative;
+	left: -17px;
+	top: 2px;
+	border: 5px white solid;
+	border-color: transparent transparent white transparent;
+}
+.body {
+	background: #F6F6F6;
+	display: flex;
+}
+.bLeft {
+	margin: 20px 0 0 30px;
+	width: 15%;
+}
+.bLeftt {
+	height: 20px;
+	background: #EFEFEF url(../img/hengtiao.png) no-repeat 3px 3px;
+	border: 1px #E4E4E4 solid;
+	border-radius: 3px 3px 0 0 ;
+	font-size: 14px;
+	color: #B8B8B8;
+	text-indent: 1.8em;
+	font-weight: bold;
+}
+.bLList div {
+	padding: 13px;
+	font-size: 14px;
+	text-indent: 1em;
+	border: #EFEFEF 1px solid;
+	border-top: none;
+}
+.bLList div:nth-child(odd) {
+	background: white url(../img/white.png) no-repeat 5px 15px;
+}
+.bLList div:nth-child(even){
+	background: url(../img/gray.png) 5px 15px no-repeat #FBFBFB;
+}
+.bRight {
+	background: #fff;
+	width: 100%;
+	margin: 20px 0 0 0px ;
+	border: 1px solid #EAEAEA;
+	border-bottom: none;
+}
+.rT {
+	background: url(../img/hengtiao2.png) no-repeat 8px 5px;
+	border-bottom: 1px solid #EAEAEA;
+	margin:20px;
+	text-indent: 2em;
+	padding: 5px;
+	font-weight: bold;
+}
+.rB {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+}
+.rB1{
+	background: #F6F6F6;
+	width: 40%;
+	height: 65px;
+	border: 1px #f6f6f6 solid;
+	border-radius: 5px;
+	margin: 10px 0 0 10px;
+	padding: 10px;
+}
+.rB1 div:last-child{
+	font-size: 12px;
+}
+.rB1 img {
+	position: relative;
+	top: 5px;left: 10px;
+	width: 35px;
+	height: 35px;
+}
+.text1 {
+	width: 80%;
+	position: relative;
+	left: 50px;top:-30px;
+	color: #666;
+	font-weight: bold;
+}
+.rB11 {
+	color: #64854C;
+	font-weight: bold;
+}
+.bLeft {
+	display: none;
+}
+.nav div:last-child {
+	display: none;
+}
+.nav div:nth-last-child(2) {
+	display: none;
+}
+.nav div:nth-last-child(3) {
+	display: none;
+}
+.body .rB {
+	display: none;
+}
+.top input {
+	display: none;
+}
+.h1 {
+	display: flex;
+	flex-wrap: wrap;
+	margin:0 3% 0 10px
+}
+.h1 div {
+	width: 28%;
+	height: 40px;
+	background: #F6F6F6;
+	margin: 8px 0 0 8px;
+	border: #F6F6F6 1px solid;
+	border-radius: 4px;
+	text-align: center;
+	font: bold 14px/40px 微软雅黑;
+	color: #6D8C56;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.nav {
+	min-width: 240px;
+}

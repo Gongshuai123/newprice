@@ -1,0 +1,8 @@
+*{padding: 0;margin: 0;}
+*{font: bold 40px 黑体;color: red;text-align: center;}
+.head {height: 75px;background: #000000;margin-bottom: 10px;}
+.bodyBox {display: flex;}
+.bodyBox div {background: #000;height: 300px;}
+.left,.right {width: 20%;}
+.body {width: 60%;margin: 0 10px 0 10px;}
+.foot {	height: 75px;background: #000000;margin-top: 10px;}

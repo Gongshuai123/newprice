@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//以前我是不写注释的,现在也不写
+	var arr3 = [
+		[
+			[1, 2, 3],
+			[4, 5, 6, 7]
+		],
+		[
+			["A", "B", "C"],
+			[4, 5, 6, 7],
+			["a"]
+		]
+	];
+	function f1 (arr){
+		for(var a = 0;a<arr.length;a++){
+			if(arr[a] instanceof Array){
+				f1(arr[a])
+			}else{console.log(arr[a])}
+		}
+	}
+	f1(arr3)
+</script>

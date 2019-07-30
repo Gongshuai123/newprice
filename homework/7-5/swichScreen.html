@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		span {border: 10px white solid;border-radius: 50%;position: absolute;cursor: pointer;}
+		.spr {position: fixed;top: 30%;right: 20px;}
+	</style>
+	<body>
+		<div id='box1'></div>
+		<div id='box2'></div>
+		<div id='box3'></div>
+		<div id='box4'></div>
+		<div id='box5'></div>
+		<div class="spr">
+			<span></span><br /><br />
+			<span></span><br /><br />
+			<span></span><br /><br />
+			<span></span><br /><br />
+			<span></span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var divs = document.getElementsByTagName('div')
+	var sps = document.getElementsByTagName('span')
+	var spr = document.getElementsByClassName('spr')[0]
+	var hgt = document.documentElement.clientHeight
+	sps[0].style.border = '10px #FFAA25 solid'
+	box1.style.background = "red"
+	box2.style.background = "blue"
+	box3.style.background = "gray"
+	box4.style.background = "pink"
+	box5.style.background = 'lightblue'
+	spr.style.top = (hgt/2-80)+'px'
+	var ain = 0
+	for(var a = 0;a < 5;a++){
+		divs[a].style.height = hgt +'px'
+	}
+	for(var a =0;a<5;a++){
+		sps[a].inx = a
+		sps[a].onclick = function(){
+			cle()
+			// for(var j = 0;j<5;j++){
+			// 	sps[j].style.border = '10px white solid'
+			// }
+			document.documentElement.scrollTop = this.inx * hgt
+			//草他妈的这个玩意儿搞了一个点,思路错了,真他妈给我干崩溃了,差点砸键盘了
+			//要设置整体的顶部距离,并不是把某一个DIV的顶部距离设置为0
+			// console.log(document.documentElement.scrollTop)
+			// console.log(this.inx)
+			this.style.border = '10px #FFAA25 solid'
+		}
+		sps[a].onmouseover = function(){
+			cle()
+			this.style.border = '10px #FFAA25 solid'
+		}
+		// sps[a].onmouseout = function(){
+		// 	var ws = window.scrollY
+		// 	cle()
+		// 	sps[inxn(ws)].style.border = '10px #FFAA25 solid'
+		// }
+	}
+	window.onscroll = function(){
+		var ws = window.scrollY
+		cle()
+		console.log(ws)
+		sps[inxn(ws)].style.border = '10px #FFAA25 solid'
+	}
+	function cle (){
+		for(var j = 0;j<5;j++){
+			sps[j].style.border = '10px white solid'
+		}
+	}
+	function inxn (ws){
+		return Math.round(ws/hgt)
+	}
+</script>

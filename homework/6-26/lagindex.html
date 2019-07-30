@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		li{list-style: none;display: none;}
+		ul {float: left;}
+	</style>
+	<body>
+		<div class="nav">
+			<ul><span>延迟菜单</span>
+				<li>没有内容</li>
+				<li>没有内容</li>
+				<li>没有内容</li>
+				<li>没有内容</li>
+				<li>没有内容</li>
+				<li>没有内容</li>
+				<li>没有内容</li>
+			</ul>
+			<ul><span>11fff</span>
+				<li>2345</li>
+				<li>236456</li>
+				<li>674674</li>
+				<li>4574567</li>
+				<li>4674576</li>
+				<li>45757</li>
+				<li>547657</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var span = document.getElementsByTagName("span")
+	var li = document.getElementsByTagName("li")
+	var tim = null
+	span[0].onmouseover = function(){
+		clearTimeout(tim);
+		tim = setTimeout(function(){
+			for(var a =0 ;a <7;a++){
+				li[a].style.display = "block"
+			}
+		},1000)
+	}
+	span[0].onmouseout = function(){
+		clearTimeout(tim)
+		tim = setTimeout(function(){
+			for(var a =0 ;a <7;a++){
+				li[a].style.display = "none"
+			}
+		},1000)
+	}		
+	for(var a =0;a<li.length;a++){
+		li[a].onmouseover = function(){
+			clearTimeout(tim);
+			for(var b = 0;b<7;b++){
+				li[b].style.color = "black"
+				li[b].style.backgroundColor = "white"
+			}
+			this.style.color = "white"
+			this.style.backgroundColor = "blue"
+		}
+		li[a].onmouseout = function(){
+			clearTimeout(tim);
+			tim = setTimeout(function(){
+				for(var a =0 ;a <7;a++){
+					li[a].style.display = "none"
+				}
+			},1000)
+		}
+	}
+</script>

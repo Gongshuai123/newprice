@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		li{margin: 10px;5px}
+	</style>
+	<body>
+		<ul>
+			<li id ="meat">
+				<button type="button" value="0">-</button>
+				<span>0</span>件
+				<button type="button" value="0">+</button>
+				<span>4.50</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="1">-</button>
+				<span>0</span>件
+				<button type="button" value="1">+</button>
+				<span>3.70</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="2">-</button>
+				<span>0</span>件
+				<button type="button" value="2">+</button>
+				<span>2.80</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="3">-</button>
+				<span>0</span>件
+				<button type="button" value="3">+</button>
+				<span>1.90</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="4">-</button>
+				<span>0</span>件
+				<button type="button" value="4">+</button>
+				<span>4.10</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="5">-</button>
+				<span>0</span>件
+				<button type="button" value="5">+</button>
+				<span>2.30</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+			<li>
+				<button type="button" value="6">-</button>
+				<span>0</span>件
+				<button type="button" value="6">+</button>
+				<span>3.90</span>元
+				结果:<input type="" name="" id="" value="" />
+			</li>
+		</ul>
+		<div id="all1">商品总计：价格总计：</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.getElementsByTagName("button")
+	var span = document.getElementsByTagName("span")
+	var input = document.getElementsByTagName("input")
+	var all1 = document.getElementById("all1")
+	var price = [4.5,3.7,2.8,1.9,4.1,2.3,3.9]
+	var n = 0
+	var m = 0
+	for(var a = 0;a<btn.length;a++){
+		btn[a].onclick = function(){
+			var b = 0
+			for(;;b++){
+				if(b == this.value){
+					break
+				}
+			}
+			if(this.innerHTML == "+"){
+				span[b*2].innerHTML = (span[b*2].innerHTML)*1+1
+			}
+			if(this.innerHTML == "-" && span[b*2].innerHTML != 0){
+				span[b*2].innerHTML = (span[b*2].innerHTML)*1-1
+			}
+			input[b].value = (span[b*2].innerHTML*10000)*(price[b]*10000)/100000000
+			for(var c= 0;c<7;c++){
+				m += Math.round(input[c].value*100)
+				n += span[c*2].innerHTML*1
+			}
+			// console.log(m)
+			// console.log(n)
+			all1.innerHTML = ('商品总计：'+n+'价格总计：'+m/100)
+			m = 0
+			n = 0
+		}
+	}
+</script>

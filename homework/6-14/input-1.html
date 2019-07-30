@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册表练习</title>
+	</head>
+	<style type="text/css">
+		div {
+			font: 14px/30px 宋体;
+		}
+		.key1 {
+			width: 50px;
+			height: 20px;
+		}
+		.why {
+			font: 12px 宋体;
+		}
+	</style>
+	<body>
+		<div>电子邮箱:<input /></div>
+		<div>设置密码:<input type="password" /></div>
+		<div>真实姓名:<input /></div>
+		<div>
+			性别:男<input type="radio" name="sex" id="" value="" />
+				女<input type="radio" name="sex" />
+		</div>
+		<div>生日
+			<select id="year">
+				<option value="1919">1919</option>
+			</select>年
+			<select id="month">
+				<option value ="1">1</option>
+			</select>月
+			<select id="day">
+				<option value ="1">1</option>
+			</select>日
+		</div>
+		<div class="why"><a href="">为什么要填写我的生日？</a></div>
+		<div>我要打
+			<select>
+				<option value ="">请选择位置</option>
+				<option value ="">上单</option>
+				<option value ="">中单</option>
+				<option value ="">打野</option>
+				<option value ="">ADC</option>
+				<option value ="">辅助</option>
+				<option value ="">演员</option>
+			</select>（非常重要）</div>
+		<div>验证码:<input type="" name="" id="" value="" class="key1" /></div>
+		<div><button type="button">立即注册</button></div>
+	</body>
+</html>
+	<script type="text/javascript">
+		var year = document.getElementById("year")
+		// console.log(year)
+		for(var a = 1920;a < 2019;a++){
+			year.innerHTML += ("<option value="+(a)+">"+(a)+"</option>")
+		}
+		var month = document.getElementById("month")
+		for(var b = 2;b < 13;b++){
+			month.innerHTML += ("<option value =\""+b+"\">"+b+"</option>")
+		}
+		var day = document.getElementById("day")
+		for(var c = 2;c < 32;c++){
+			day.innerHTML += ("<option value =\""+c+"\">"+c+"</option>")
+		}
+	</script>

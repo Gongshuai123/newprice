@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.top {display: flex;justify-content: space-around;height: 40px;
+		background: linear-gradient(rgba(80,80,80,.3),rgba(240,240,240,0));
+		align-items: center;position: fixed;top:0;width: 100%;
+		opacity: ;}
+		.icon-xia{font-size: 12px;color: white;}
+		.top div:nth-child(2){border: 1px solid white;border-radius: 20px;
+		height: 25px;display: flex;justify-content: space-around;width: 170px;
+		align-items: center;background: white;}
+		.top div span {font-size: 12px;color: #666;}
+		.icon-kefu,.icon-wode{margin-left: 10px;color: white;font-size: 19px;}
+		.top div:first-child {font-size: 14px;font-weight: bold;color: white;}
+		.lunbo{/* border: 1px solid red; */width: 100%;
+		background-image:linear-gradient(0deg, #fff 15%, lightblue 100%);
+		display: flex;justify-content: center;}
+		.lunbo div{width: 90%;margin-top: 20%;}
+		.lunbo img{width: 100%;border-radius: 10px;}
+		.top3{display: flex;width: 100%;justify-content: space-around;
+		margin: 3% 0;}
+		.top3 div {width:20%}
+		.top3 div img{width: 100%;}
+		li{list-style: none;width: 21%;text-align: center;
+		border: 2px solid #E9E9E9;padding: 2% 1%;
+		border-right: none;border-bottom: none;}
+		.form{width: 100%;border-radius: 10px;margin: 5% 0;
+		display: flex;flex-wrap: wrap;justify-content: center;}
+		.form li p{font-size: 12px;color: #999;margin-top: 3%;}
+		li:first-child{border-radius: 10px 0 0 0 ;}
+		li:nth-child(4){border-radius: 0px 10px 0 0 ;border-right: 2px solid #E9E9E9;;}
+		li:nth-child(9){border-radius: 0px 0 0px 10px;}
+		li:nth-child(8){border-right:2px solid #E9E9E9;}
+		li:last-child{border-radius: 0px 0 10px 0px;border-right:2px solid #E9E9E9;}
+		li:nth-child(n+9){border-bottom: 2px solid #E9E9E9;;}
+		.lvyou{display: flex;justify-content: space-around;font-size: 12px;color: #999999;}
+		.lvyou div{width: 20%;text-align: center;height: 60px;display: flex;flex-direction: column-reverse;}
+		.lvyou div:first-child{background: url(img/dingzhi.png) no-repeat 50% 0px;background-size: 30px;}
+		.lvyou div:nth-child(2){background: url(img/yinhang.png) no-repeat 50% 0px;background-size: 30px;}
+		.lvyou div:nth-child(3){background: url(img/jieqian.png) no-repeat 50% 0px;background-size: 30px;}
+		.lvyou div:nth-child(4){background: url(img/lvyou.png) no-repeat 50% 0px;background-size: 30px;}
+		.lvyou div:nth-child(5){background: url(img/gengduo.png) no-repeat 50% 0px;background-size: 30px;}
+		.qiandao {width: 100%;display: flex;justify-content: center;margin: 3% 0;}
+		.qiandao img{width: 31%;height: 30%;}
+		.remen{display: flex;justify-content: space-between;
+		background: #EFEFEF;height: 40px;align-items: center;}
+		.remen p{margin: 0 4%;}
+		.remen p:first-child{font-weight: bold;}
+		.remen p:last-child{font-size: 12px;color: #666;}
+		.remen p i{background: #999;border-radius: 10px;}
+		#ic{font-size: 12px;color: #fff;margin-left: 5px;}
+		.remen1{height: 100px;}
+		.xinren{display: flex;justify-content: center;align-items: center;
+		width: 100%;}
+		.xinren img{width: 100%;}
+		.huodong {height: 200px;}
+		.cnxhtop{display: flex;justify-content: space-around;}
+		.cnxhtop div{height: 35px;line-height: 35px;font-size: 12px;}
+		.cnxhtop div:first-child{border-bottom: 3px red solid;}
+		.mpt{height: 100px;border-radius: 3px;}
+		.mpt div{background: #999;border-radius: 5px;color: white;width: 40px;
+		font-size: 12px;}
+		.menpiao div div:nth-child(2){font-size: 12px;margin: 5px;}
+		.menpiao div div:nth-child(3){font-size: 11px;margin: 2px;
+		color: orange;border: 1px solid orange;border-radius: 2px;
+		width: 48px;font-weight: bold;}
+		.jg div span:first-child{color: orange;font-size: 13px;}
+		.jg div span:last-child{color: orangered;font-size: 16px;
+		font-weight: bold;font-family: '黑体';}
+		.mp1 {width: 45%;}
+		.mp1:nth-child(even){margin-left: 2%;}
+		.jg{color: #666;font-size: 11px;}
+		.jg{display: flex;justify-content: space-between;width: 100%;}
+		#manyi{font-size: 11px;}
+		.menpiao{display: flex;flex-wrap: wrap;justify-content: center;}
+	</style>
+	<body>
+		<div class="top">
+			<div>上海<i class="iconfont icon-xia"></i></div>
+			<div>
+				<i class="iconfont icon-fangdajing"></i>
+				<span>搜索景区/目的地/酒店/邮轮</span>
+			</div>
+			<div>
+				<i class="iconfont icon-kefu"></i>
+				<i class="iconfont icon-wode"></i>
+			</div>
+		</div>
+		<div class="lunbo">
+			<div>
+				<img src="img/lunbo1.jpg" >
+			</div>
+		</div>
+		<div class="top3">
+			<div><img src="img/menpiao.png" ></div>
+			<div><img src="img/jiudian.png" ></div>
+			<div><img src="img/jiudianjingdian.png" ></div>
+			<div><img src="img/wanghong.png" ></div>
+			<div><img src="img/shuqi.png" ></div>
+		</div>
+		<ul class="form">
+			<li>
+				<h5>周边游</h5>
+				<p>周末去哪儿</p>
+			</li>
+		</ul>
+		<div class="lvyou">
+			<div>
+				<span>定制游</span>
+			</div>
+			<div>
+				<span>银行特惠</span>
+			</div>
+			<div>
+				<span>借钱·分期</span>
+			</div>
+			<div>
+				<span>长隆旅游</span>
+			</div>
+			<div>
+				<span>更多</span>
+			</div>
+		</div>
+		<div class="qiandao">
+			<img src="img/qiandao.png" >
+			<img src="img/hongbao.png" >
+			<img src="img/huiyuan.png" >
+		</div>
+		<div class="remen">
+			<p>当季热门城市</p>
+			<p>这个城市从此多了一个你<i class="iconfont icon-xia" id="ic"></i></p>
+		</div>
+		<div class="remen1">
+			
+		</div>
+		<div class="xinren"><img src="img/xinrenzhuanxiang.png" ></div>
+		<div class="remen">
+			<p>热门活动</p>
+			<p>虽然有钱也要精打细算</p>
+		</div>
+		<div class="huodong"></div>
+		<div class="remen">
+			<p>猜你喜欢</p>
+			<p>精挑细选热门排行</p>
+		</div>
+		<div class="cnxh">
+			<div class="cnxhtop">
+				<div>门票</div>
+				<div>周边游</div>
+				<div>酒店</div>
+				<div>国内游</div>
+				<div>出境游</div>
+			</div>
+		</div>
+		<div class="menpiao">
+			<!-- <div class="mp1">
+				<div class="mpt" style="background: url(img/ceshi.jpg) no-repeat;background-size: 100%;">
+					<div>今日订</div>
+				</div>
+				<div>上海野生动物园</div>
+				<div>驴月亲子</div>
+				<div class="jg">
+					<div>
+						<span>¥</span>
+						<span>109</span>
+						起
+					</div>
+					<div id="manyi">99%满意</div>
+				</div>
+			</div>
+			<div class="mp1">
+				<div class="mpt" style="background: url(img/ceshi.jpg);background-size: 100%;">
+					<div>今日订</div>
+				</div>
+				<div>上海野生动物园</div>
+				<div>驴月亲子</div>
+				<div class="jg">
+					<div>
+						<span>¥</span>
+						<span>109</span>
+						起
+					</div>
+					<div id="manyi">99%满意</div>
+				</div>
+			</div> -->
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		window.onscroll= function(){
+			console.log(document.documentElement.scrollTop)
+			var a = document.documentElement.scrollTop/300
+			$('.top').css('background','rgba(255,0,0,'+a+')')
+			// if(document.documentElement.scrollTop>200){
+			// 	$('.top').css(
+			// 	'background','rgba(255,0,0)'
+			// 	)
+			// }else{
+			// 	$('.top').css('background','linear-gradient(rgba(80,80,80,.3),rgba(240,240,240,0))')
+			// }
+		}
+		for(var a =0;a<11;a++){
+			$('.form').append(
+			`<li>
+				<h5>周边游</h5>
+				<p>周末去哪儿</p>
+			</li>
+			`)
+		}
+		ajax('get','https://www.easy-mock.com/mock/5ba06ec82ee5a7654dc13dd7/example/guessLike','',function(a){
+			var n = JSON.parse(a)
+			console.log(n)
+			for(var a =0;a<n.datas.length;a++){
+				$('.menpiao').append(`
+				<div class="mp1">
+					<div class="mpt" style="background: url(${n.datas[a].images}) no-repeat;background-size: 100%;">
+						<div>今日订</div>
+					</div>
+					<div>${n.datas[a].name}</div>
+					<div>驴月亲子</div>
+					<div class="jg">
+						<div>
+							<span>¥</span>
+							<span>${n.datas[a].price}</span>
+							起
+						</div>
+						<div id="manyi">${n.datas[a].commentGood}满意</div>
+					</div>
+				</div>
+				`)
+			}
+		})
+	})
+</script>

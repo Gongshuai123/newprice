@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function NewPre (a,b,c){
+		this.age=a
+		this.name1 = b
+		this.fun = function(){
+			console.log(c)
+		}
+	}
+	var pp = new NewPre('lili',18,'cai')
+	console.log(pp)
+	pp.fun()
+	function newp (a,b,c){
+		var obj = new Object()
+		obj.name = a
+		obj.age = b
+		obj.fun = function(){
+			console.log(c)
+		}
+		return obj
+	}
+	var p2 = newp('sigol',11,'caicai')
+	console.log(p2)
+	
+</script>

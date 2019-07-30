@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>制作轮播图</title>
+	</head>
+	<style type="text/css">
+		img {width: 800px;position: absolute;}
+		.box {width: 800px;height: 300px;position: relative;overflow: hidden;}
+	</style>
+	<body>
+		<div class="box">
+			<img src="img/xmad_1.jpg" >
+			<img src="img/xmad_2.jpg" >
+			<img src="img/xmad_3.jpg" >
+			<img src="img/xmad_4.jpg" >
+			<img src="img/xmad_5.jpg" >
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var img = document.getElementsByTagName("img")
+	var a = 0
+	var b = -800
+	var inx0 = 0
+	var inx1 = 1
+	var on = 1
+	var open = null
+	var sd = function(off){
+		if(off != 0){
+			open = setTimeout(function(){
+				on = 1
+			},2000)
+		}else{
+			clearTimeout(open)
+		}
+	}
+	var timer = setInterval(function(){
+		if(on){
+			img[inx0].style.zIndex = 1
+			img[inx0].style.left = ++a+"px"
+			img[inx1].style.zIndex = 1
+			img[inx1].style.left = ++b+"px"
+			if (a == 800){
+				on = 0;
+				sd();
+				++inx0;
+				++inx1;
+				a = 0;
+				b = -800;
+			}
+			if(inx0 == 4){
+				inx1 = 0;
+			}
+			if(inx1 == 1){
+				inx0 = 0
+			}
+			
+		}
+	},20)
+	for(var i = 0;i<5;i++){
+		img[i].onmouseover = function(){
+			on = 0
+			sd(0)
+		}
+		img[i].onmouseout = function(){
+			on = 1
+		}
+	}
+</script>

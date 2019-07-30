@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {width: 100px;height: 100px;background: #0086B3;}
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName('div')[0]
+	div.onclick = function(){
+		div.style.background = "red"
+		
+	}
+	document.body.onclick = function(){
+		this.style.background = 'blue'
+	}
+	document.onclick = function(){
+		console.log(666)
+	}
+</script>

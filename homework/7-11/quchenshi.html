@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: 0 ;padding: 0;}
+		.top{width: 100%;height: 10%;border: 1px solid #EFEFEF;position: fixed;
+		top: 0;display: flex;justify-content: space-between;align-items: center;
+		background: white;z-index: 2;}
+		input {border-radius: 20px;border: 1px solid #EFEFEF;height: 80%;width: 70%;}
+		.top>i{font-size: 25px;margin: 0 5%;color: #666;}
+		.nav{display: flex;justify-content: space-around;height: 10%;position: fixed;
+		top: 10%;width: 100%;border: 1px solid #EFEFEF;border-top: none;
+		background: white;z-index: 2;}
+		.nav div{height: 100%;line-height: 300%;font-weight: 500;}
+		.body{margin-top: 20%;}
+		img{width: 100%;vertical-align: top;}
+		.sp{display: flex;justify-content: space-around;flex-wrap: wrap;
+		background: #FEEDE3;padding: 2%;}
+		.sp0{width: 30%;padding: 1%;/* border: #000000 1px solid; */
+		background: white;margin-top: 2%;}
+		.nam{font-size: 12px;min-height: 2.5em;margin-left: 5%;}
+		.jiage img{width: 30%;position: absolute;left: 70%;top: 0;}
+		.jiage {position: relative;padding: 5% 0;background: white;}
+		.jiage span{margin-left: 5%;}
+		.jiage span:first-child{color: red;}
+		.nam {background: white;}
+		.btn:last-child{color: red;border-bottom: 2px solid red;}
+		.jiage span:nth-child(2){color: #999;font-size: 14px;text-decoration: line-through;}
+	</style>
+	<body>
+		<div class="top">
+			<i class="iconfont icon-user"></i>
+			<input type="" name="" id="" value="" />
+			<i class="iconfont icon-gouwuche"></i>
+		</div>
+		<div class="nav">
+			<div class="btn">今日推荐</div>
+			<div class="btn">面膜中心</div>
+			<div class="btn">潮流好物</div>
+			<div class="btn">购全球</div>
+		</div>
+		<div class="body">
+			<div><img src="img/banner.jpg" ></div>
+			<div><img src="img/biqiang.webp" ></div>
+			<div><img src="img/baokuan.webp" ></div>
+			<div class="sp">
+				<!-- <div class="sp0">
+					<div><img src="https://image.watsons.com.cn//upload/60b16516.jpg?x-oss-process=image/resize,w_375/quality,q_80/format,webp" ></div>
+					<div class="nam">Lumi胶原蛋白液态饮50ml*3</div>
+					<div>
+						<div class="jiage">
+							<span>¥46</span>
+							<span>¥78</span>
+							<img src="img/red.png" >
+						</div>
+					</div>
+				</div>
+				<div class="sp0">
+					<div><img src="https://image.watsons.com.cn//upload/60b16516.jpg?x-oss-process=image/resize,w_375/quality,q_80/format,webp" ></div>
+					<div class="nam">Lumi胶原蛋白液态饮50ml*3</div>
+					<div>
+						<div class="jiage">
+							<span>¥46</span>
+							<span>¥78</span>
+							<img src="img/red.png" >
+						</div>
+					</div>
+				</div>
+				<div class="sp0">
+					<div><img src="https://image.watsons.com.cn//upload/60b16516.jpg?x-oss-process=image/resize,w_375/quality,q_80/format,webp" ></div>
+					<div class="nam">Lumi胶原蛋白液态饮50ml*3</div>
+					<div>
+						<div class="jiage">
+							<span>¥46</span>
+							<span>¥78</span>
+							<img src="img/red.png" >
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var sp = document.getElementsByClassName('sp')[0]
+	var btn = document.getElementsByClassName('btn')
+	var body = document.getElementsByClassName('body')[0]
+	ajax('get','https://www.easy-mock.com/mock/5ba06ec82ee5a7654dc13dd7/example/watsons','',function(a){
+		var res = JSON.parse(a)
+		var n = res.data.item_list
+		console.log(res.data.item_list)
+		// console.log(n.over_image_url)
+		for(var a =0;a<n.length;a++){
+			if(n[a].item_name.length>15){
+				p1 = n[a].item_name.substring(0,15)+'...'
+			}else{
+				p1 = n[a].item_name
+			}
+			sp.innerHTML += `
+			<div class="sp0">
+				<div><img src= ${n[a].over_image_url}></div>
+				<div class="nam">${p1}</div>
+				<div>
+					<div class="jiage">
+						<span>¥${n[a].max_app_price/100}</span>
+						<span>¥${n[a].max_market_price/100}</span>
+						<img src="img/red.png" >
+					</div>
+				</div>
+			</div>
+			`
+		}
+	})
+	
+	for(var a =0;a<4;a++){
+		btn[a].inx = a
+		btn[a].onclick=function(){
+			for(var a= 0 ;a<4;a++){
+				btn[a].style.border = 'none'
+				btn[a].style.color = 'black'
+			}
+			btn[this.inx].style.borderBottom = '2px solid red'
+			btn[this.inx].style.color = 'red'
+			if(this.inx != 3){
+				body.style.display='none'
+			}else{
+				body.style.display='block'
+			}
+		}
+	}
+</script>

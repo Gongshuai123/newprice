@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/wangyi.css"/>
+	<body>
+		<div>
+			<div class="top">
+				<div><img src="img/163-logo.png" ></div>
+				<div><img src="img/126-logo.png" ></div>
+				<div><img src="img/yeah-logo.png" ></div>
+				<div>中国第一大电子邮件服务商</div>
+				<div><a href="">了解更多</a><a href="">反馈意见</a></div>
+			</div>
+			<div class="top2"><span class="helo">欢迎注册网易免费邮！邮件地址可以作为网易通行证，使用其他网易旗下产品。</span></div>
+			<div class="body clf">
+				<div class="left">
+					<div class="mailBox clf">
+						<div class="mail">注册字母邮箱</div>
+						<div class="mailM">注册手机号码邮箱</div>
+					</div>
+					<div class="leftD">
+						<div class="leftD1"><span>*</span>邮件地址
+							<input class="mailI" name="" id="" value="" placeholder="建议用手机号码注册"/> @
+								<select>
+								<option value ="">163.com</option>
+								<option value ="">126.com</option>
+								<option value ="">yeah.net</option>
+								</select>
+						</div>
+						<div class="fontL">6~18个字符，可使用字母、数字、下划线，需以字母开头</div>
+						<div class="leftD1"><span>*</span>密码
+							<input type="password" name="" id="" value="" />
+						</div>
+						<div class="fontL">6~18个字符，区分大小写</div>
+						<div class="leftD1"><span>*</span>确认密码
+							<input type="password" name="" id="" value="" />
+						</div>
+						<div class="fontL">请再次填写密码</div>
+						<div class="leftD1"><span>*</span>验证码
+							<input type="" name="" id="" value="" />
+						</div>
+						<div class="fontL fontS">请填写图片中的字符，不区分大小写</div>
+						<div class="leftD2 fontL"">
+							<input class="ckBox"type="checkbox" name="" id="" value="" />
+							同意<a href="">“服务条款”</a>和<a href="">“隐私权相关政策”</a>
+						</div>
+						<div><button type="button" class="btn">立即注册</button></div>
+						<div class="keyP"><img src="img/validate-code.png" alt="验证码"><span><a href="">看不清楚？换张图片</a></span></div>
+					</div>	
+				</div>
+				<div class="right"></div>
+			</div>	
+		</div>
+		<div class="foot">关于网易&nbsp 关于网易免费邮&nbsp 邮箱官方博客&nbsp 客户服务&nbsp 隐私政策&nbsp | &nbsp网易公司版权所有&nbsp &copy; 1997-2013</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var phone = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/
+		var adr = /^[a-zA-Z0-9_]{6,18}$/
+		var pasW = /^\w{6,18}$/
+		$('.mailI').blur(function(){
+			var n = $('.mailI').val()
+			if(phone.test(n)||adr.test(n)){}
+			else{
+				alert('注册地址不符合要求')
+			}
+		})
+		var inp0 = $('input[type="password"]').eq(0)
+		var inp1 = $('input[type="password"]').eq(1)
+		inp0.blur(function(){
+			if(!pasW.test(inp0.val())){
+				alert('密码不符合要求')
+			}
+		})
+		// console.log($('input[type="password"]').eq(0))
+		inp1.blur(function(){
+			if(inp0.val() != inp1.val()){
+				alert('两次输入密码不相同')
+			}
+		})
+	})
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		div{width: 50px;height: 500px;border: 1px red solid;margin: 50px;}
+		body::-webkit-scrollbar{display: none;}
+		#shu{border: 1px solid blue;width: 0px;position: fixed;top: 5%;right: 15px;margin: 0;}
+		#qiu{width: 10px;height: 10px;border-radius: 50%;margin: 0;
+		position: fixed;right: 10px;background: pink;}
+		#gun{width: 10px;position: fixed;top: 5%;right: 5px;
+		margin: 0;height: 90%;padding: 0 5px;border: none;}
+	</style>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div id="gun">
+			<div id="shu">
+				<div id="qiu"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		sc()
+		$('#shu').height($(window).height()*0.9+'px')
+		$(window).resize(function(){
+			sc()
+			$('#shu').height($(window).height()*0.9+'px')
+		})
+		$(window).scroll(function(){
+			sc()
+		})
+		$('#gun').mousedown(function(e){
+			on=1
+			var ec = e.offsetY+$(window).height()*0.05-5
+			var dc = $(document).height()-$(window).height()
+			var b = (e.offsetY/$('#gun').height())
+			$('#qiu').css('top',ec+'px')
+			// console.log($('#gun').height())
+			$(document).scrollTop(dc*b)
+			// console.log(e.offsetY)
+			$('#gun').mousemove(function(e){
+				if(on&&e.clientY>$(window).height()*0.05&&e.clientY<$(window).height()*0.95){
+					$('#qiu').css('top',e.clientY-5)
+					var b = (e.clientY-$(window).height()*0.05)/$('#gun').height()
+					console.log(b)
+					var dc = $(document).height()-$(window).height()
+					$(document).scrollTop(dc*b)
+					// console.log(e.offsetY)
+				}
+			})
+			$(document).mouseup(function(){
+				on=0
+			})
+		})
+		// $('#gun').mousemove(function(e){
+		// 	$('#qiu').css('top',e.offsetY-20)
+		// })
+	})
+	var dsc = function(dc){
+		
+	}
+	var sc = function(){
+		var b = $(document).scrollTop()/($(document).height()-$(window).height())
+		$('#qiu').css('top',$(window).height()*0.9*b+$(window).height()*0.05-5+'px')
+	}
+</script>

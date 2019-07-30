@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var f1 = function(){
+		var a = 0
+		var result = 0
+		for(;;a++){
+			result +=a
+			if(a == 100000000){
+				break
+			}
+		}
+	}
+	var tim1 = new Date
+	var tim2 = tim1.getTime()
+	f1();
+	var tim3 = new Date
+	var tim4 = tim3.getTime()
+	console.log(tim4-tim2)
+</script>

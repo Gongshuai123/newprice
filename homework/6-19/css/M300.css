@@ -1,0 +1,8 @@
+*{padding: 0;margin: 0;}
+*{font: bold 40px 黑体;color: purple;text-align: center;}
+.head {height: 75px;background: #000000;}
+.bodyBox {display: flex;flex-direction: column;}
+.left {margin: 10px 0;background: #000000;height: 300px;}
+.body {background: #000000;height: 300px;}
+.right {display: none;}
+.foot {background: #000000;height: 80px;margin: 10px 0;}

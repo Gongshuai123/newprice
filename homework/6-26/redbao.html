@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		input {width: 50px;}
+		button {margin: 15px 0;}
+	</style>
+	<body>
+		<div>发多少钱 <input type="" name="" id="" value="" />
+		发给几个人 <input type="" name="" id="" value="" /></div>
+		<button type="button">发红包</button>
+		<div>
+			<ol>
+			</ol>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var inp = document.getElementsByTagName("input")
+	var ol = document.getElementsByTagName("ol")[0]
+	var btn = document.getElementsByTagName("button")[0]
+	var f1 = function(){
+		return Math.random()+0.1
+	}
+	btn.onclick = function(){
+		ol.innerHTML
+		var mnf = 0;
+		var mny = 0;
+		var all = 0;
+		var n = inp[1].value
+		var mn = inp[0].value
+		for(var a = 0;a < n-1;a++){
+			mnf = Math.ceil(f1() * mn*0.3)
+			ol.innerHTML += ("<li>" + mnf + "</li>")
+			all += mnf
+			mn = mn - mnf
+		}
+		ol.innerHTML += ("<li>" + mn + "</li>")
+	}
+</script>

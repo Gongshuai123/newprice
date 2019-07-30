@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>positionPractice2</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.box {width: 320px;height: 320px;border: 2px orangered solid;}
+		.boxs {
+			width: 100px;
+			height: 100px;
+			background: #FE0000;
+			position: relative;
+			font: bold 14px/100px 宋体;
+			color: white;
+			text-align: center;
+			}
+		.boxs:last-child {background: #3332CC;}
+		.boxs:first-child {left: 10px;top: 10px;}
+		.boxs:nth-child(2) {left: 210px;bottom: 90px;}
+		.boxs:nth-child(3) {top: 10px;left: 10px}
+		.boxs:nth-child(4) {bottom: 90px;left: 210px;}
+		.boxs:last-child {bottom: 290px;left: 110px;color: yellow;}
+	</style>
+	<body>
+		<div class="box">
+			<div class="boxs">链接</div>
+			<div class="boxs">链接</div>
+			<div class="boxs">链接</div>
+			<div class="boxs">链接</div>
+			<div class="boxs">链接</div>
+		</div>
+	</body>
+</html>

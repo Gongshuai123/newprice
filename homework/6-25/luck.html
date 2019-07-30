@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{margin: 5px;}
+		.end{width: 100px;height: 25px;border: lightblue 1px solid;}
+	</style>
+	<body>
+		<div>一级五行石</div>
+		<div>二级五行石</div>
+		<div>三级五行石</div>
+		<div>四级五行石</div>
+		<div>五级五行石</div>
+		<div>六级五行石</div>
+		<div>七级五行石</div>
+		<div>遗失的尊敬</div>
+		<div>200帮贡</div>
+		<div>200威望</div>
+		<div>50名剑币</div>
+		<div>赤兔马</div>
+		<button type="button" onclick="f1()">抽奖</button>
+		<div>抽奖结果</div>
+		<div class="end"></div>
+		<div>抽奖次数(十次必中七级五行石！)<span id="num"></span></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var divs = document.getElementsByTagName("div")
+	var count = 0;
+	var num = document.getElementById("num")
+	function f1(){
+		for(;;){
+			var a = Math.round(Math.random()*11)
+			if(a != 6){
+			break;
+			}
+		}
+		if(count == 9){
+			a = 6;
+			alert("恭喜大奖！七级五行石！")
+		}
+		divs[13].innerHTML = divs[a].innerHTML
+		num.innerHTML = ++count;
+	}
+</script>

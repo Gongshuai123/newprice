@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>input练习</title>
+	</head>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.clf:after {
+			content: "";
+			display: block;
+			clear: both;
+			}
+		.boxOut {
+			width: 640px;
+			}
+		.red {
+			color: red;
+			}
+		.left div {
+			width: 100px;height: 30px;
+			text-align: right;
+			margin: 15px 0;
+			font-size: 14px;
+		}
+		.left {
+			float: left;
+			}
+		.left div:nth-child(10) {
+			margin: 0 0 93px 0;
+			}
+		.centerBox {
+			float: left;
+			}
+		textarea {
+			overflow:hidden;
+			resize: none;
+		}
+		.centerBox div {
+			margin: 10px 0 21px 5px;
+			}
+		.centerBox div:nth-child(11) {
+			font-size: 12px;
+			}
+		input {
+			width: 225px;
+			height: 25px;
+			}
+		.centerBox div:nth-child(4) input {
+			width: 15px;
+			height: 15px;
+			}
+		.centerBox div:nth-child(3) {
+			position: relative;
+			top: -5px;
+			}
+		.centerBox div:nth-child(7) {
+			position: relative;
+			top: 0px;
+			font-size: 12px;
+			}
+		.centerBox div:nth-last-child(3) {
+			color: #666;
+			font-size: 12px;
+			}
+		.centerBox div:nth-last-child(4) {
+			border-bottom: 1px dotted #999;
+			padding: 0 0 5px 0;
+			margin: 0 0 0 5px;
+			}
+		.centerBox div:last-child input {
+			outline: none;
+			border: none;
+			}
+		.centerBox div:nth-last-child(2) {
+			color: #333;
+			font-size: 14px;
+			}
+		.tans {
+			border: 5px lightblue solid;
+			border-color: lightblue transparent transparent transparent;
+		}
+		.tans1 {
+			position: absolute;
+			top: 5px;left: 70px;
+		}
+		.tans2 {
+			position: absolute;
+			top: 5px;left: 35px;
+		}
+		.tans3 {
+			position: absolute;
+			top: 5px;left: 90px;
+		}
+		.rightBox {
+			float: left;
+			}
+		.ftt2 {
+			font-size: 12px;
+			color: #0082CB;
+			}
+		.ftt {
+			font-size: 12px;
+			background: #F1FFD4;
+			border: 1px solid #F1FFD4;
+			width: 250px;
+			text-align: center;
+			border-radius: 3px;
+			line-height:20px;
+		}
+		.rightBox .ftt {
+			margin: 13px 0 80px 20px;
+			position: relative;
+			}
+		.rightBox .ftt2 {
+			margin: 30px 5px 0px 50px; 
+			position: relative;
+			}
+		.rightBox div:nth-child(3) {
+			margin: 110px 5px 0px 50px;
+			}
+		.name1 {
+			top: -50px;
+			}
+		.btn {
+			width: 50px;
+			height: 20px;
+			border: limegreen;
+			background: linear-gradient(#85CE63,#64B340);
+			color: white;
+			position: relative;
+			top: 185px;
+			right: 235px;
+			}
+	</style>
+	<body>
+		<div class="boxOut clf">
+			<div class="left">
+				<div><span class="red">*</span>昵称：</div>
+				<div>真实姓名：</div>
+				<div><span class="red">*</span>所在地：</div>
+				<div><span class="red">*</span>性别：</div>
+				<div>生日：</div>
+				<div>博客地址：</div>
+				<div>常用邮箱：</div>
+				<div>QQ：</div>
+				<div>MSN：</div>
+				<div>一句话介绍：</div>
+				<div>证件类型：</div>
+				<div>证件号码：</div>
+			</div>
+			<div class="centerBox">
+				<div><input type="" name="" id="" value="" /></div>
+				<div><input type="" name="" id="" value="" /></div>
+				<div>
+					<select>
+						<option value ="">北京</option>
+						<option value ="">南京</option>
+						<option value ="">河南</option>
+					</select>
+					<select>
+						<option value ="">朝阳区</option>
+						<option value ="">漯河</option>
+						<option value ="">三门峡</option>
+					</select>
+				</div>
+				<div>
+					<input type="radio" name="sex"/>男&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="sex"/>女
+				</div>
+				<div>
+					<select>
+						<option value ="">2019</option>
+						<option value ="">2018</option>
+						<option value ="">2017</option>
+					</select>
+					年
+					<select>
+						<option value ="">1</option>
+						<option value ="">2</option>
+						<option value ="">3</option>
+					</select>
+					月
+					<select>
+						<option value ="">1</option>
+						<option value ="">2</option>
+						<option value ="">3</option>
+					</select>
+					日
+				</div>
+				<div><input type="" name="" id="" value="" /></div>
+				<div>mofeiangmotao@sina.com <a href="">修改</a></div>
+				<div><input type="" name="" id="" value="" /></div>
+				<div><input type="" name="" id="" value="" /></div>
+				<div><textarea rows="4" cols="30">人生在于折腾</textarea></div>
+				<div>以下信息，可作为通过客服取回账号的依据</div>
+				<div>身份证</div>
+				<div><input type="" name="" id="" value="" /></div>
+			</div>
+			<div class="rightBox">
+				<div class="ftt">4~20个字符，支持中英文、数字、"_"或减号</div>
+				<div class="ftt2 name1">所有人可见<span class="tans tans1"></span></div>
+				<div class="ftt2">保密<span class="tans tans2"></span></div>
+				<div class="ftt2">所有人可见<span class="tans tans1"></span></div>
+				<div class="ftt2">我关注的人可见<span class="tans tans3"></span></div>
+				<div class="ftt2">我关注的人可见<span class="tans tans3"></span></div>
+				<div class="ftt2">我关注的人可见<span class="tans tans3"></span></div>
+			</div>
+			<div><button type="button"class="btn">提交</button></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="icon/iconfont.css">
+	<style type="text/css">
+		.clf:after{content: "";display: block;clear: both;}
+		*{padding: 0;margin: 0;}
+		i:hover{color: lightblue;}
+		tr:first-child {background:#81A7E8;font-size: 16px;font-weight: bold;color: white;}
+		table {width: 770px;text-align: center;border-collapse: collapse;border-bottom: 1px lightgray solid;border-right: 1px lightgray solid;;}
+		tr,td {border: 1px lightgray solid;border-right: none;border-bottom: none;}
+		tr{height: 30px;}
+		td{position: relative;}
+		td:first-child{width: 40px;}
+		i{font-size: 5px;}
+		tr:nth-child(n+2){font-size: 12px;}
+		.outBody {padding: 10px;border: 1px solid lightgray;width: 770px;background: #E6E9EE;
+		height: 350px;position: relative;margin: 0 auto;margin-top: 10%;}
+		ul{position: absolute;bottom: 18px;right: 10px;}
+		li {list-style: none;
+		float: left;background: #F4F5F7;border: 1px lightblue solid;font-size: 12px;
+		margin: 0 3px;padding: 2px 6px;
+		}
+		li:hover {background: #0082CB;color: white;cursor: pointer;}
+		.add,.alls{border: 1px lightgrey solid;height: 30px;position: absolute;
+		border-radius: 3px;font: 14px/30px 宋体;text-align: center;color: white;}
+		.add{width: 70px;background: lightblue;bottom: 15px;left: 160px;}
+		.add:hover{background: skyblue;cursor: pointer;}
+		.alls {width: 90px;background: #F08E8D;bottom: 15px;left: 50px;}
+		.alls:hover{background: orangered;cursor: pointer;}
+		.che1 {position: absolute;bottom: 20px;left: 20px;}
+		.icon-fuxuankuangkong {font-size: 16px;}
+		tr:nth-child(even){background: #F3F4F6;}
+		tr:nth-child(2n+3){background: white;}
+		.back{width: 100%;height: 100%;position: absolute;background:#000000;
+		top: 0;left: 0;opacity: 0.2;display: none;z-index: 1;}
+		.window1{width: 270px;height: 320px;border: 1px solid #0082CB;
+		border-radius: 20px;z-index: 2;position: absolute;top: 10px;
+		left: 260px;background: whitesmoke;}
+		.window1 div{margin-top: 18px;margin-left: 25px;}
+		input{border: 1px solid lightblue;border-radius: 3px;height: 28px;width: 10em;}
+		.window1 div:first-child input{margin-left: 17px;}
+		.window1 div:nth-child(2) input{margin-left: 32px;}
+		.sub,.clear{width: 70px;height: 30px;border: 1px #0077AA solid;border-radius: 3px;
+		font: 14px/30px 宋体;text-align: center;position: absolute;}
+		.sub {left: 10px;}
+		.clear {left: 140px;}
+		.sub:hover{background: lightcyan;cursor: pointer;}
+		.clear:hover {background: lightcyan;cursor: pointer;}
+		.window1 {display: none;}
+		span:hover{cursor: pointer;color: #999;}
+		td:nth-child(n+2){width: 85px;}
+	</style>
+	<body>
+		<div class="outBody">
+			<table>
+				<tr>
+					<td><i class="iconfont icon-fuxuankuangkong" ></i><!-- <input type="checkbox" name="" id="" value="" /> --></td>
+					<td>展顶id</td>
+					<td>名称</td>
+					<td>所处楼层</td>
+					<td>所处位置</td>
+					<td>所属展区</td>
+					<td>更多</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td>
+						<i class="iconfont icon-fuxuankuangkong" ></i>
+						<!-- <input type="checkbox" name="" id="" value="" /> -->
+					</td>
+					<td>item-01</td>
+					<td>小V平台组</td>
+					<td>4</td>
+					<td>100，300</td>
+					<td>z-03</td>
+					<td><span>查看更多></span></td>
+					<td><i class="iconfont icon-ceshishenqing" title="编辑"></i>&nbsp &nbsp &nbsp<i class="iconfont icon-shanchu" title="删除"></i></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<ul class="clf">
+				<li>首页</li>
+				<li>上一页</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>下一页</li>
+			</ul>
+			<div class="che1"><!-- <input type="checkbox" name="" id="" value="" /> --><i class="iconfont icon-fuxuankuangkong" ></i></div>
+			<div class="alls"><i class="iconfont icon-shanchu"></i> 批量删除</div>
+			<div class="add"><i class="iconfont icon-jia"></i> 新增</div>
+			<div class="window1">
+				<div>展项id：<input type="" name="" id="" value="" /></div>
+				<div>名称：<input type="" name="" id="" value="" /></div>
+				<div>所处楼层：<input type="" name="" id="" value="" /></div>
+				<div>所处位置：<input type="" name="" id="" value="" /></div>
+				<div>所属展区：<input type="" name="" id="" value="" /></div>
+				<div class="sub">确 定</div>
+				<div class="clear">取 消</div>
+			</div>
+		</div>
+		<div class="back"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var alls = document.getElementsByClassName('alls')[0]
+	var add = document.getElementsByClassName('add')[0]
+	var back = document.getElementsByClassName('back')[0]
+	var window1 = document.getElementsByClassName('window1')[0]
+	var clear = document.getElementsByClassName('clear')[0]
+	
+	var sub = document.getElementsByClassName('sub')[0]
+	var trinx = 1
+	var on = 1
+	var cInx = 0
+	var inps = document.getElementsByTagName('input')
+	var tds = document.getElementsByTagName('td')
+	var sps = document.getElementsByTagName('span')
+	var iconCs = document.getElementsByClassName('icon-ceshishenqing')
+	var iconSs = document.getElementsByClassName('icon-shanchu')
+	var getN = function(){
+		tds = document.getElementsByTagName('td')
+		sps = document.getElementsByTagName('span')
+		iconCs = document.getElementsByClassName('icon-ceshishenqing')
+		iconSs = document.getElementsByClassName('icon-shanchu')
+	}
+	var td0 = '<i class="iconfont icon-fuxuankuangkong" ></i>'
+	var td6 = '<span>查看更多></span>'
+	var td7 = '<i class="iconfont icon-ceshishenqing" title="编辑"></i>&nbsp &nbsp &nbsp<i class="iconfont icon-shanchu" title="删除"></i>'
+	var tab = document.getElementsByTagName('table')[0]
+	add.onclick = function(){
+		wOn()
+		for(var a =0;a <inps.length;a++){
+			inps[a].value = ""
+			inps[a].disabled = ""
+			on = 1
+		}
+	}
+	clear.onclick = function(){
+		wOff()
+	}
+	sub.onclick = function(){
+		if(on){
+			if(cInx){
+				var inx = cInx*8+1
+				for(var a =0 ;a<inps.length;a++){
+					tds[a+inx].innerHTML = inps[a].value
+				}
+			}else{
+				var inx = ++trinx*8+1
+				for(var a =0 ;a<inps.length;a++){
+					var text = document.createTextNode(inps[a].value)
+					tds[a+inx].appendChild(text)
+					tds[inx-1].innerHTML = td0
+					tds[inx+5].innerHTML = td6
+					tds[inx+6].innerHTML = td7
+				}
+			}
+			wOff()
+			getN()
+		}
+	}
+	for(var a = 0;a<sps.length;a++){
+		sps[a].onclick = function(){
+			on = 0
+			wOn()
+			for(var a =0;a<sps.length;a++){
+				sps[a].inx = a+1
+			}
+			var inx = this.inx*8+1;
+			for(var a = 0 ;a<5;a++){
+				inps[a].disabled = 'disabled'
+				inps[a].value = tds[a+inx].innerHTML
+			}
+		}
+	}
+	for(var a =0;a <iconCs.length;a++){
+		iconCs[a].inx = a+1
+		iconCs[a].onclick = function(){
+			wOn()
+			var inx = this.inx*8+1;
+			cInx = this.inx;
+			for(var a = 0 ;a<5;a++){
+				inps[a].disabled = ""
+				inps[a].value = tds[a+inx].innerHTML
+				// console.log(this.inx)
+			}
+		}
+	}
+	for(var a =0;a<iconSs.length;a++){
+		iconSs[a].onclick = function(){
+			console.log(this.parentElement.parentElement)
+			var tt = this.parentElement
+			console.log(tt.parentElement)
+			console.log(tab.childElementCount)
+			tt.parentElement.remove()
+			getN()
+		}
+	}
+	function wOn(){
+		window1.style.display = "block"
+		back.style.display = "block"
+	}
+	function wOff(){
+		window1.style.display = "none"
+		back.style.display = "none"
+	}
+</script>

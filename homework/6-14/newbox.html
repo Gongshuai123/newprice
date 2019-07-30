@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>只用padding画盒子</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.clf:after {content: "";display: block;clear: both;}
+		.box7 {border: 1px dashed #000;padding: 25px;background: #fff;float: left;}
+		.box6 {
+			border: 5px #D7EFFE solid;
+			background: #F6F6F6;
+			padding: 20px;
+		}
+		.box5 {
+			border: none;
+			background: #FFA0DF;
+			padding:30px ;
+		}
+		.box4 {
+			border: 1px #fff dotted;
+			padding: 5px;
+		}
+		.box3 {
+			border: dashed #fff 1px;
+			padding: 30px;
+		}
+		.box2 {
+			border: 5px #FCFF00 solid;
+			padding: 30px;
+			background: #96FF38;
+		}
+	</style>
+	<body>
+		<div class="box7">
+			<div class="box6">
+				<div class="box5">
+					<div class="box4">
+						<div class="box3">
+							<div class="box2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

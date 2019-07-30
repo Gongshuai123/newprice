@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div,p{width: 100px;height: 100px;border: 3px solid #0077AA;}
+	</style>
+	<body>
+		<div></div>
+		<p></p>
+		<button type="button">打开窗口</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName('div')[0]
+	var p = document.getElementsByTagName('p')[0]
+	div.onclick = function(){
+		set.call(p,'background','red')
+	}
+	
+	function set (sty,col){
+		this.style[sty] = col
+	}
+</script>
+<script type="text/javascript">
+	function fn1 (){
+		console.log('1')
+	}
+	function fn2 (){
+		console.log('2')
+	}
+	fn1.call(fn2)
+	fn1.call.call(fn2)
+	var btn = document.getElementsByTagName('button')[0]
+	// btn.onclick= function(){
+	// 	// window.open()
+	// 	window.close()
+	// }
+</script>

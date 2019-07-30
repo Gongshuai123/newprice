@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<button type="button">1</button>
+		<button type="button">2</button>
+		<button type="button">3</button>
+		<button type="button">4</button>
+		<button type="button">5</button>
+		<button type="button">6</button>
+		<button type="button">7</button>
+		<button type="button">8</button>
+		<button type="button">9</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.getElementsByTagName('button')
+		for(var a = 0;a<btn.length;a++){
+			(function(a){
+				btn[a].onclick = function(){
+					console.log(a)
+				}
+			})(a)
+		}
+	var obj = {
+		name:'孙',
+		age:18,
+		say:function(){
+			console.log(this.name)
+		}
+	}
+	obj.say(name)
+	var str = 'https://www.baidu.com/s?wd=锦烟霞&rsv_spt=1&rsv_iqid=0xb75365510002d5d7&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=1&oqputT=14xBW2&rsv_ug3=47'
+	var a = str.indexOf('wd=')
+	var b = str.indexOf('&rsv_spt=')
+	console.log(str.substring(a+3,b))
+	var str = '123124125214213414134234123123246672453783333333333333333333'
+	function ff(str){
+		var str1 = str.charAt(0)
+		for(var a =0;a<str.length;a++){
+			// console.log(str1)
+			if(str1.indexOf(str[a])==-1){
+				str1 = str1.concat(str[a])
+			}
+		}
+		return str1
+	}
+	function f2 (str){
+		var arr =[0,0]
+		for(var a = 0;a<str.length;a++){
+			var cont = 0
+			for(var b =0;b<str.length;b++){
+				if(str[a]==str[b]){
+					cont++
+				}
+			}
+			if(arr[1]<cont){
+				arr[1]=cont
+				arr[0]=str[a]
+			}
+		}
+		return arr
+	}
+	console.log(f2(str))
+	// var c
+	// console.log(c)
+</script>

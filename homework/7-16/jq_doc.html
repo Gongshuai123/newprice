@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jq/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {border: 1px solid red;}
+	</style>
+	<body>
+		<div>222</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var a = $('<p>11111</p>')
+		$('div').append(a)
+		$('div').wrap('div')
+		$('div').wrapAll('div')
+	})
+	function f1 (){
+		
+	}
+	var length = 10;
+	function fn(){
+		console.log(this.length)
+	}
+	var obj = {
+		length:5,
+		method:function(fn){
+			fn();
+			arguments[0]();
+		}
+	};
+	obj.method(fn,1)
+</script>

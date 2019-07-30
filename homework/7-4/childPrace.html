@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>大兄弟</li>
+			<li>小兄弟</li>
+			<li>小女儿</li>
+			<li>小小女儿</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl = document.getElementsByTagName("ul")[0]
+	var aLi = document.getElementsByTagName("li")
+	console.log(oUl.firstElementChild)
+	oUl.firstElementChild.style['color'] = 'red'
+	console.log(oUl.lastChild) //这是一个没有灵魂的注释,你懂我的意思吧？
+	console.log(oUl.lastElementChild)
+	console.log(oUl.children)
+	oUl.children[1].style.color = '#0000FF'
+	console.log(aLi[0].nextElementSibling)
+	console.log(oUl.firstElementChild.nextElementSibling)
+	console.log(oUl.lastElementChild.previousElementSibling)
+</script>

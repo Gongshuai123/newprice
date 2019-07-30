@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//例行不写注释,任性
+	var arr1 = [
+		[20, 12, 4, 1, 2],
+		[22, 21, 18, 15],
+		[
+			[4,6,8,2,10], [7,8,9,3,4],9
+			]
+	];
+	var i = 0
+	var f1 = function(arr){
+		for(var a = 0;a < arr.length;a++){
+			if(arr[a] instanceof Array){
+				f1(arr[a])
+			}else{
+				for(var b =0;b < arr.length;b++){
+					for(var c = b+1;c<arr.length;c++){
+						if(arr[b]<arr[c]){
+							i = arr[b]
+							arr[b] = arr[c]
+							arr[c] = i
+						}
+					}
+				}
+			}
+		}
+	}
+	f1(arr1)
+	console.log(arr1)
+	//妈的蛇精病啊
+	// console.log(typeof arr1[1][1]) // number
+	// console.log(arr1[1][1] instanceof Number) //false
+</script>
